@@ -1,0 +1,63 @@
+.language {
+	position: relative;
+	display: flex;
+	z-index: 10;
+}
+.language p {
+	width: 140px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	font-weight: 600;
+	color: var(--color-dark-blue);
+	padding: 0 15px 0 10px;
+}
+.language p img {
+	width: 30px;
+	height: 15px;
+}
+.language svg {
+	cursor: pointer;
+}
+.drop_language {
+	position: absolute;
+	top: calc(100% + 10px);
+	right: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 5px;
+	width: 160px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+}
+.drop_language p {
+	padding: 15px 20px;
+	border-radius: 8px;
+	width: 100%;
+	transition: background-color 0.3s ease-in-out;
+	display: flex;
+	justify-content: space-between;
+}
+.drop_language p:hover {
+	background-color: #eee;
+}
+.light__language {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+}
+
+@media (max-width: 1015px) {
+	.language {
+		display: none;
+	}
+}

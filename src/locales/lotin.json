@@ -1,0 +1,64 @@
+{
+	"header": {
+		"button1": "Yo'riqnoma",
+		"cources": "KURSLAR",
+		"button2": "Kirish",
+		"drop_cources": [
+			"Ta'lim yo'nalishlari, kurslar va kasblar ro'yhati",
+			"Kurilish nazorati yo'nalishi bo'yicha malaka oshirish",
+			"Issiqlik tarmoqlari va issiqlik punktlarini ishlatish va ta'mirlash",
+			"Suv ta'minoti va oqava suv korxonalari boshqaruvini tashkil qilish va boshqarish bo'yicha malaka oshirish kursi",
+			"Kurilish loyihasini boshqarish",
+			"Bug' va issiq suvli qozon operatori",
+			"Issiqlik energetika jihozlari va qozonhona qurilmalari operatori",
+			"Nasos stansiyasi operatori",
+			"Elektr qurilmalariga hizmat ko'rsatuvchi elektromontyorlarni malakasini oshirish kursi",
+			"Kompyuter savodxonligi o'quv kursi",
+			"Kuruvchilar malakasini oshirish",
+			"Mehnat muhofazasi va texnika havfsizligi bo'yicha malaka oshirish kursi"
+		]
+	},
+	"sidebar": {
+		"lists": [
+			"Qurilish mollari",
+			"Armatura",
+			"Sement",
+			"Kraska",
+			"Biton G'ist",
+			"Forma",
+			"Statistika"
+		],
+		"button": "Yo'riqnoma"
+	},
+	"login": {
+		"login": "Kirish",
+		"phoneNumber": "Telefon raqam",
+		"password": "Parol"
+	},
+	"mainPage": {
+		"title": "«Uzluksiz kasbiy ta’lim» elektron platformasi",
+		"p": "«Uzluksiz kasbiy ta’lim» elektron platformasi",
+		"button": "Malaka oshirishni boshlash"
+	},
+	"footer": {
+		"title1": {
+			"title": "KURSLAR",
+			"lists": ["Aniq fanlar", "Tabiiy fanlar", "Xorijiy tillar", "PISA"]
+		},
+		"title2": {
+			"title": "MENING PROFILIM",
+			"lists": ["Akkaunt", "Sozlamalar", "E'lonlar"]
+		},
+		"title3": {
+			"title": "ALOQA",
+			"lists": [
+				"Biz haqimizda",
+				"Konfidensiallik siyosati",
+				"Yordam",
+				"Malaka oshirishni tashkil etishga ariza topshirish",
+				"FAQ"
+			]
+		},
+		"span": "Barcha huquqlar himoyalangan."
+	}
+}
