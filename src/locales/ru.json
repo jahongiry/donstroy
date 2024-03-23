@@ -35,6 +35,15 @@
 		],
 		"button": "Руководство"
 	},
+	"login": {
+		"login": "Вход",
+		"phoneNumber": "Номер телефона",
+		"password": "Пароль",
+		"emailError1": "Требуется ввести email",
+		"emailError2": "Email должен содержать символ '@' в адресе",
+		"passwordError1": "Требуется ввести пароль",
+		"passwordError2": "Пароль должен содержать не менее 4 символов"
+	},
 	"footer": {
 		"title1": {
 			"title": "КУРСЫ",

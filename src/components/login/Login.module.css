@@ -12,7 +12,7 @@
 	align-items: center;
 	gap: 50px;
 	border-radius: 8px;
-	transition: .5s;
+	transition: 0.5s;
 }
 .form h2 {
 	color: var(--color-light-blue);
@@ -40,7 +40,15 @@ form button {
 	top: -20px;
 	color: var(--color-dark-blue);
 }
-
+.form label p {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 10px;
+	font-size: 12px;
+	color: red;
+	padding: 10px 0 0;
+}
 .dark {
 	position: fixed;
 	top: 0;
@@ -50,7 +58,7 @@ form button {
 	height: 100vh;
 	background-color: rgba(0, 0, 0, 0.35);
 	cursor: pointer;
-	transition: .5s;
+	transition: 0.5s;
 }
 
 @media (max-width: 440px) {
