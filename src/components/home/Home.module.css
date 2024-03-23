@@ -1,0 +1,13 @@
+.v_logo {
+	position: fixed;
+	bottom: 80px;
+	left: -43px;
+	padding: 7px;
+	background-color: #fff;
+	box-shadow: 1px 5px 15px gray;
+	transform: rotate(-90deg);
+	border-radius: 4px;
+}
+.v_logo img {
+	width: 130px;
+}
