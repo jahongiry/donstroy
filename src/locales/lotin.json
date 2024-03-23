@@ -33,7 +33,11 @@
 	"login": {
 		"login": "Kirish",
 		"phoneNumber": "Telefon raqam",
-		"password": "Parol"
+		"password": "Parol",
+		"emailError1": "Emailni kiritish shart",
+		"emailError2": "Email manzilda '@' belgisi bo'lishi shart",
+		"passwordError1": "Parolni kiritish shart",
+		"passwordError2": "Parol kamida 4 belgidan iborat bo'lishi shart"
 	},
 	"mainPage": {
 		"title": "«Uzluksiz kasbiy ta’lim» elektron platformasi",
