@@ -23,13 +23,13 @@ const Sidebar = ({ setShowSidebar, setLanguage, language }) => {
 			>
 				<div className={styles.languages}>
 					<button
-						className={language.includes('Русский') ? 'btn_dark' : 'btn'}
+						className={language.includes('Русский') ? 'btn_full' : 'btn'}
 						onClick={() => setLanguage('Русский')}
 					>
 						Рус
 					</button>
 					<button
-						className={language.includes("O'zbekcha") ? 'btn_dark' : 'btn'}
+						className={language.includes("O'zbekcha") ? 'btn_full' : 'btn'}
 						onClick={() => setLanguage("O'zbekcha")}
 					>
 						O'zb
@@ -37,7 +37,9 @@ const Sidebar = ({ setShowSidebar, setLanguage, language }) => {
 				</div>
 				<ul>
 					{menuLinks.map((link, inx) => (
-						<li key={inx}>{link}</li>
+						<li key={inx}>
+							<a href=''>{link}</a>
+						</li>
 					))}
 				</ul>
 				<button className='btn'>Yo'riqnoma</button>
