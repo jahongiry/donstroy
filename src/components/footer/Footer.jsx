@@ -1,14 +1,18 @@
+import { useSelector } from 'react-redux'
+import { selectTranslations } from '../../slices/LanguageSlice'
 import styles from './Footer.module.css'
-const linksLeft = ['Aniq fanlar', 'Tabiiy fanlar', 'Xorijiy tillar', 'PISA']
-const linksCeneter = ['Akkaunt', 'Sozlamalar', "E'lonlar"]
-const linksRight = [
-	'Biz haqimizda',
-	'Konfidensiallik siyosati',
-	'Yordam',
-	'Malaka oshirishni tashkil etishga ariza topshirish',
-	'FAQ',
-]
+// const linksLeft = ['Aniq fanlar', 'Tabiiy fanlar', 'Xorijiy tillar', 'PISA']
+// const linksCeneter = ['Akkaunt', 'Sozlamalar', "E'lonlar"]
+// const linksRight = [
+// 	'Biz haqimizda',
+// 	'Konfidensiallik siyosati',
+// 	'Yordam',
+// 	'Malaka oshirishni tashkil etishga ariza topshirish',
+// 	'FAQ',
+// ]
+
 export const Footer = () => {
+	const translations = useSelector(selectTranslations)
 	return (
 		<div className={styles.main_footer}>
 			<div className='container'>
@@ -18,9 +22,9 @@ export const Footer = () => {
 					</div>
 					<div className={styles.links}>
 						<div className={styles.left}>
-							<p>KURSLAR</p>
+							<p>{translations.footer.title1.title}</p>
 							<ul>
-								{linksLeft.map((link, inx) => (
+								{translations.footer.title1.lists.map((link, inx) => (
 									<li key={inx}>
 										<a href=''>{link}</a>
 									</li>
@@ -28,9 +32,9 @@ export const Footer = () => {
 							</ul>
 						</div>
 						<div className={styles.center}>
-							<p>MENING PROFILIM</p>
+							<p>{translations.footer.title2.title}</p>
 							<ul>
-								{linksCeneter.map((link, inx) => (
+								{translations.footer.title2.lists.map((link, inx) => (
 									<li key={inx}>
 										<a href=''>{link}</a>
 									</li>
@@ -38,9 +42,9 @@ export const Footer = () => {
 							</ul>
 						</div>
 						<div className={styles.right}>
-							<p>ALOQA</p>
+							<p>{translations.footer.title3.title}</p>
 							<ul>
-								{linksRight.map((link, inx) => (
+								{translations.footer.title3.lists.map((link, inx) => (
 									<li key={inx}>
 										<a href=''>{link}</a>
 									</li>
