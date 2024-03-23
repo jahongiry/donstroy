@@ -11,3 +11,8 @@
 .v_logo img {
 	width: 130px;
 }
+@media (max-width: 1015px) {
+	.v_logo {
+		display: none;
+	}
+}

@@ -10,15 +10,12 @@
 .navbar {
 	height: 80px;
 	width: 100%;
-	color: #002d6d;
+	color: var(--color-dark-blue);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
-.navbar img {
-	width: 220px;
-	height: 50px;
-}
+
 .left {
 	display: flex;
 	justify-content: center;
@@ -35,11 +32,11 @@
 	border: none;
 	outline: none;
 	background-color: #f6f6f8;
-	color: #002d6d;
+	color: var(--color-dark-blue);
 	font-weight: 600;
 }
 .search_input input:focus {
-	outline: 1px solid var(--primary-color);
+	outline: 1px solid var(--color-light-blue);
 }
 .search_input input::placeholder {
 	color: #8995c3;
@@ -50,7 +47,7 @@
 	transform: translateY(-50%);
 	right: 20px;
 	font-size: 16px;
-	color: #1c3793;
+	color: var(--color-dark-blue);
 }
 .right {
 	display: flex;
@@ -68,12 +65,12 @@
 	font-size: 14.4px;
 	border-radius: 8px;
 	color: #fff;
-	background-color: var(--primary-color);
+	background-color: var(--color-light-blue);
 	border: none;
 	transition: 0.3s;
 }
 .right button:hover {
-	background-color: var(--primary-color-hover);
+	background-color: var(--color-light-blue-hover);
 }
 .language {
 	position: relative;
@@ -85,7 +82,7 @@
 	gap: 5px;
 	cursor: pointer;
 	font-weight: 600;
-	color: #0d2e69;
+	color: var(--color-dark-blue);
 }
 .drop_language {
 	position: absolute;
@@ -118,7 +115,7 @@
 	padding: 8px 12px;
 	border-radius: 8px;
 	border: none;
-	background-color: var(--primary-color);
+	background-color: var(--color-light-blue);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -128,9 +125,6 @@
 	color: #fff;
 }
 @media (max-width: 1222px) {
-	.header {
-		padding: 0 30px;
-	}
 	.search_input input {
 		width: 360px;
 	}
@@ -141,16 +135,15 @@
 		gap: 25px;
 	}
 }
-
+.header_space {
+	padding: 40px 0;
+}
 @media (max-width: 1090px) {
 	.search_input input {
 		width: 300px;
 	}
 }
 @media (max-width: 1015px) {
-	.header {
-		padding: 0 50px;
-	}
 	.menu {
 		display: block;
 	}
@@ -171,10 +164,6 @@
 	}
 }
 @media (max-width: 500px) {
-	.navbar img {
-		width: 150px;
-		height: 30px;
-	}
 	.right button {
 		padding: 8px 12px !important;
 	}
@@ -183,9 +172,6 @@
 	}
 }
 @media (max-width: 400px) {
-	.header {
-		padding: 0 20px;
-	}
 	.right button {
 		padding: 8px 9px !important;
 	}
