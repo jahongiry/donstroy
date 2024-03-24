@@ -60,6 +60,7 @@ export const Login = ({ setShowLogin }) => {
 						})}
 					/>
 					<button
+						type='button'
 						className={styles.show_btn}
 						onClick={() => setShowPassword(v => !v)}
 					>
