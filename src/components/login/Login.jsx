@@ -27,7 +27,7 @@ export const Login = ({ setShowLogin }) => {
 			>
 				<h2>{translatioins.login.login}</h2>
 				<label>
-					<span>{translatioins.login.phoneNumber}</span>
+					<span>{translatioins.login.email}</span>
 					<input
 						type='text'
 						{...register('email', {
@@ -46,7 +46,7 @@ export const Login = ({ setShowLogin }) => {
 					</p>
 				</label>
 				<label>
-					<span>Parol</span>
+					<span>{translatioins.login.password}</span>
 					<input
 						type={showPassword ? 'text' : 'password'}
 						{...register('password', {
