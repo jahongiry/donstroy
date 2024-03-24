@@ -15,6 +15,9 @@ export const MainPage = () => {
 					<img src='/images/donstroy_building.webp' alt='donstroy building' />
 				</div>
 			</div>
+			<div className={styles.v_logo}>
+				<img src='/images/v_logo.svg' alt='v-logo' />
+			</div>
 		</div>
 	)
 }

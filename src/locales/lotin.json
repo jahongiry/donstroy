@@ -32,7 +32,7 @@
 	},
 	"login": {
 		"login": "Kirish",
-		"phoneNumber": "Telefon raqam",
+		"email": "Electron pochta",
 		"password": "Parol",
 		"emailError1": "Emailni kiritish shart",
 		"emailError2": "Email manzilda '@' belgisi bo'lishi shart",

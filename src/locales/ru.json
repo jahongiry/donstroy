@@ -37,7 +37,7 @@
 	},
 	"login": {
 		"login": "Вход",
-		"phoneNumber": "Номер телефона",
+		"email": "Эмаил почта",
 		"password": "Пароль",
 		"emailError1": "Требуется ввести email",
 		"emailError2": "Email должен содержать символ '@' в адресе",
