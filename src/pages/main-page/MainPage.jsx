@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { selectTranslations } from '../slices/LanguageSlice'
+import { selectTranslations } from '../../slices/LanguageSlice'
 import styles from './MainPage.module.css'
 export const MainPage = () => {
 	const translations = useSelector(selectTranslations)
@@ -14,9 +14,6 @@ export const MainPage = () => {
 				<div className={styles.right}>
 					<img src='/images/donstroy_building.webp' alt='donstroy building' />
 				</div>
-			</div>
-			<div className={styles.v_logo}>
-				<img src='/images/v_logo.svg' alt='v-logo' />
 			</div>
 		</div>
 	)

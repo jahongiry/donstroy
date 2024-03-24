@@ -20,7 +20,17 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 30px;
+	gap: 10px;
+}
+.left :where(img, p) {
+	cursor: pointer;
+}
+.left p {
+	font-weight: 550;
+	font-size: 18px;
+}
+.left button {
+	margin-left: 20px;
 }
 .cources p {
 	cursor: pointer;
@@ -113,7 +123,7 @@
 	padding: 10px 15px;
 	border-radius: 6px;
 	background-color: transparent;
-	color: #90a8dc;
+	color: var(--color-gray);
 }
 .show_drop {
 	top: 0;
@@ -191,6 +201,12 @@
 	}
 }
 @media (max-width: 500px) {
+	.left {
+		gap: 0;
+	}
+	.left p {
+		font-size: 15px;
+	}
 	.right button {
 		padding: 8px 12px !important;
 	}
@@ -206,6 +222,9 @@
 	}
 }
 @media (max-width: 400px) {
+	.left p {
+		font-size: 16px;
+	}
 	.right button {
 		padding: 8px 9px !important;
 	}
@@ -215,5 +234,10 @@
 	.drop_btns button {
 		font-size: 10px;
 		padding: 10px 5px;
+	}
+}
+@media (max-width: 350px) {
+	.left p {
+		display: none;
 	}
 }

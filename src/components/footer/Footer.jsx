@@ -18,7 +18,7 @@ export const Footer = () => {
 			<div className='container'>
 				<div className={styles.footer}>
 					<div className={styles.image}>
-						<img src='/images/logo.png' className='logo_img' alt='logo img' />
+						<img src='/images/logo.webp' className='logo_img' alt='logo img' />
 					</div>
 					<div className={styles.links}>
 						<div className={styles.left}>
