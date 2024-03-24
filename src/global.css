@@ -24,10 +24,16 @@
 	/* font-family: 'Cera Pro Bold', 'FallbackFont', Arial, sans-serif; */
 	font-family: sans-serif;
 }
-:root {
+/* :root {
 	--color-light-blue: #26cbc4;
 	--color-light-blue-hover: rgb(10, 171, 171);
 	--color-dark-blue: #0d2e69;
+} */
+:root {
+	--color-light-blue: #f0cb73;
+	--color-light-blue-hover: #cba449;
+	--color-dark-blue: #6e5215;
+	--color-gray: #a08fa6;
 }
 .container {
 	max-width: 1200px;
@@ -69,8 +75,8 @@
 	background-color: var(--color-light-blue-hover);
 }
 .logo_img {
-	width: 220px;
-	height: 50px;
+	width: 70px;
+	height: 70px;
 }
 button {
 	cursor: pointer;
@@ -83,7 +89,7 @@ ul li {
 	padding: 3px 0;
 }
 ul li a {
-	color: #a08fa6;
+	color: var(--color-gray);
 	cursor: pointer;
 	transition: 0.2s;
 	font-size: 18px;
@@ -115,14 +121,12 @@ ul li a:hover {
 		padding: 0 50px;
 	}
 }
-@media (max-width: 500px) {
-	.logo_img {
-		width: 150px;
-		height: 30px;
-	}
-}
 @media (max-width: 400px) {
 	.container {
 		padding: 0 20px;
+	}
+	.btn {
+		padding: 7px, 10px;
+		font-size: 13px;
 	}
 }

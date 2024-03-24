@@ -21,7 +21,10 @@ export const Header = () => {
 				<div className='container'>
 					<div className={styles.navbar}>
 						<div className={styles.left}>
-							<img src='/images/logo.png' className='logo_img' alt='logo' />
+							{/* <div className={styles.logo}> */}
+							<img src='/images/logo.webp' className='logo_img' alt='logo' />
+							<p>Donstroy Project</p>
+							{/* </div> */}
 							<button className='btn'>{translations.header.button1}</button>
 						</div>
 						<div className={styles.center}>

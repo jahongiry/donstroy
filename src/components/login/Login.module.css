@@ -31,16 +31,16 @@ form input {
 form button {
 	height: 40px !important;
 }
-.form label {
+.input {
 	position: relative;
 }
-.form label span {
+.input span {
 	font-size: 14px;
 	position: absolute;
 	top: -20px;
 	color: var(--color-dark-blue);
 }
-.form label p {
+.input p {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -48,6 +48,24 @@ form button {
 	font-size: 12px;
 	color: red;
 	padding: 10px 0 0;
+}
+.input:nth-child(2) {
+	position: relative;
+}
+.show_btn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 40px !important;
+	height: 35px !important;
+	padding: 0;
+	border: none;
+	background-color: var(--color-light-blue-hover);
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
 }
 .dark {
 	position: fixed;

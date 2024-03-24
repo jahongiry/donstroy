@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { TiWarningOutline } from 'react-icons/ti'
 import { useSelector } from 'react-redux'
 import { selectTranslations } from '../../slices/LanguageSlice'
@@ -26,7 +27,7 @@ export const Login = ({ setShowLogin }) => {
 				onSubmit={handleSubmit(onsubmit)}
 			>
 				<h2>{translatioins.login.login}</h2>
-				<label>
+				<div className={styles.input}>
 					<span>{translatioins.login.email}</span>
 					<input
 						type='text'
@@ -44,8 +45,9 @@ export const Login = ({ setShowLogin }) => {
 						{errors.email ? <TiWarningOutline /> : <></>}
 						{errors.email?.message}
 					</p>
-				</label>
-				<label>
+				</div>
+				{/* <div className={(styles.input, styles.password)}> */}
+				<div className={styles.input}>
 					<span>{translatioins.login.password}</span>
 					<input
 						type={showPassword ? 'text' : 'password'}
@@ -57,11 +59,17 @@ export const Login = ({ setShowLogin }) => {
 							},
 						})}
 					/>
+					<button
+						className={styles.show_btn}
+						onClick={() => setShowPassword(v => !v)}
+					>
+						{showPassword ? <FaEyeSlash /> : <FaEye />}
+					</button>
 					<p>
 						{errors.password ? <TiWarningOutline /> : <></>}
 						{errors.password?.message}
 					</p>
-				</label>
+				</div>
 				<button type='submit' className='btn_full' disabled={isLoading}>
 					{translatioins.login.login}
 				</button>

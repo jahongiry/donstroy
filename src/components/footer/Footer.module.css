@@ -35,6 +35,15 @@
 .right ul {
 	padding: 0 0 30px;
 }
+footer p {
+	text-align: center;
+	padding: 40px 0;
+	color: #333;
+	font-size: 14px;
+}
+footer p span {
+	color: var(--color-gray);
+}
 @media (max-width: 950px) {
 	.footer {
 		display: block;
@@ -54,13 +63,4 @@
 	.links p {
 		padding: 0 0 19px 0;
 	}
-}
-footer p {
-	text-align: center;
-	padding: 40px 0;
-	color: var(--color-dark-blue);
-	font-size: 14px;
-}
-footer p span {
-	color: var(--color-light-blue);
 }
