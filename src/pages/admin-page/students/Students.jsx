@@ -130,7 +130,7 @@ export const Students = () => {
 				'Sed vitae augue eget tortor tempus condimentum. Sed tincidunt est vel augue tincidunt, id gravida neque commodo.',
 			date: '2023-01-15',
 			certificate:
-				'https://thumbs.dreamstime.com/z/certificato-dell-oro-modello-premio-del-diploma-74899663.jpg',
+				'https://www.heritagechristiancollege.com/wp-content/uploads/2019/05/free-diploma-templates-of-large-certificate-of-pletion-templates-free-psd-of-free-diploma-templates.jpg',
 		},
 		{
 			id: 14,
