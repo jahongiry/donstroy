@@ -1,0 +1,128 @@
+.admin {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	/* display: grid;
+	grid-template-columns: 200px 1fr; */
+}
+.mange_admin {
+	width: 350px;
+	height: 100vh;
+	background-color: var(--color-light-blue);
+	position: sticky;
+	z-index: 0;
+	top: 80px;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 0 0 0 30px;
+	user-select: none;
+	transition: 0.5s;
+}
+.mange_admin img {
+	width: 150px;
+	margin: 0 0 0 50px;
+	cursor: pointer;
+}
+.mange_admin .icon_buttons {
+	display: none;
+}
+.btns {
+	position: relative;
+}
+.btns button {
+	width: 280px;
+	padding: 9px 0;
+	margin-top: 20px;
+	font-size: 17px;
+	border: 1px solid var(--color-dark-blue);
+	color: var(--color-gray);
+	border-radius: 8px;
+	transition: all 0.3s ease-in-out;
+}
+.btns svg {
+	position: absolute;
+	top: 28px;
+	right: 10px;
+	font-size: 25px;
+	color: var(--color-dark-blue);
+	transition: all 0.3s ease-in-out;
+}
+.mange_admin button:hover {
+	background-color: var(--color-dark-blue-hover);
+	color: #fff;
+}
+.mange_admin button:active {
+	transform: scale(0.9);
+}
+.svg {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 23px;
+	color: var(--color-dark-blue);
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+}
+.admin_view {
+	min-width: 73.4%;
+	/*
+	width: 100%; */
+	padding: 0 0 0 20px;
+}
+.small_sidebar {
+	position: relative;
+	width: 60px;
+	height: 100vh;
+	background-color: var(--color-light-blue);
+	transition: 0.5s;
+}
+.small_sidebar img {
+	display: none;
+}
+.small_sidebar .btns {
+	display: none;
+}
+.small_sidebar .icon_buttons {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+.small_sidebar .icon_buttons svg {
+	font-size: 25px;
+	color: var(--color-dark-blue);
+}
+.small_sidebar .icon_buttons .add {
+	position: relative;
+}
+.small_sidebar .icon_buttons .add .plus {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	font-size: 14px;
+}
+.small_sidebar .icon_buttons .plus {
+	position: absolute;
+	top: 0;
+}
+.small_sidebar .icon_buttons button {
+	border-radius: 50%;
+	padding: 10px;
+	background-color: #fff;
+	border: 2px solid var(--color-dark-blue);
+	transition: all 0.3s ease-in-out;
+}
+.small_sidebar .icon_buttons button:hover {
+	background-color: var(--color-light-blue);
+}
+.small_sidebar .icon_buttons button:active {
+	transform: scale(0.9);
+}
