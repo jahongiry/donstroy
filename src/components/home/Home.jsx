@@ -7,17 +7,19 @@ import { Header } from '../header/Header'
 
 export const Home = () => {
 	return (
-		<>
-			<Header />
-			<Routes>
-				{routes.map(route => (
-					<Route key={route.path} {...route} />
-				))}
-				<Route path='/' element={<Auth />}>
-					<Route path='/admin' element={<AdminPage />} />
-				</Route>
-			</Routes>
+		<div className='content'>
+			<div>
+				<Header />
+				<Routes>
+					{routes.map(route => (
+						<Route key={route.path} {...route} />
+					))}
+					<Route path='/' element={<Auth />}>
+						<Route path='/admin' element={<AdminPage />} />
+					</Route>
+				</Routes>
+			</div>
 			<Footer />
-		</>
+		</div>
 	)
 }

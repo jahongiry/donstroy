@@ -78,6 +78,12 @@
 	width: 70px;
 	height: 70px;
 }
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100dvh;
+}
 button {
 	cursor: pointer;
 }

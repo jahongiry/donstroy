@@ -1,9 +1,14 @@
+import { useState } from 'react'
 import { BsCalendar2Date } from 'react-icons/bs'
 import { FaChalkboardTeacher } from 'react-icons/fa'
 import { IoSettingsOutline } from 'react-icons/io5'
 import { MdDriveFileRenameOutline, MdOutlineDescription } from 'react-icons/md'
+import { ZoomImage } from '../zoom-image/ZoomImage'
 import styles from './StudentsTable.module.css'
 const StudensTable = ({ data }) => {
+	const [showZoomImage, setShowZoomImage] = useState(false)
+	const [img, setImg] = useState(0)
+
 	return (
 		<div className={styles.table_container}>
 			<table className={styles.table}>
@@ -49,7 +54,14 @@ const StudensTable = ({ data }) => {
 							<td>{item.courseName.slice(0, 15)}...</td>
 							<td>{item.description.slice(0, 15)}...</td>
 							<td>{item.date}</td>
-							<td>{item.certificate}</td>
+							<td
+								onClick={() => {
+									setShowZoomImage(true)
+									setImg(item.id)
+								}}
+							>
+								<img src={item.certificate} alt='img' />
+							</td>
 							<td>
 								<button className={styles.action_btn}>Edit</button>
 								<button className={styles.action_btn}>Delete</button>
@@ -58,6 +70,9 @@ const StudensTable = ({ data }) => {
 					))}
 				</tbody>
 			</table>
+			{showZoomImage && (
+				<ZoomImage data={data} img={img} setShowZoomImage={setShowZoomImage} />
+			)}
 		</div>
 	)
 }
