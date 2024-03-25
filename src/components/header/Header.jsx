@@ -4,7 +4,9 @@ import { FaRegUser } from 'react-icons/fa'
 import { IoMenu } from 'react-icons/io5'
 import { TbX } from 'react-icons/tb'
 import { useSelector } from 'react-redux'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useHeader } from '../../hooks/useHeader'
+import { pathToArray, prohibited } from '../../routes/ProhibitedPath'
 import { selectTranslations } from '../../slices/LanguageSlice'
 import { Login } from '../login/Login'
 import Sidebar from '../sidebar/Sidebar'
@@ -14,17 +16,23 @@ export const Header = () => {
 	const { language, setLanguage, showSidebar, setShowSidebar } = useHeader()
 	const [showCourcesTable, setShowCourcesTable] = useState(false)
 	const [showLogin, setShowLogin] = useState(false)
+	const { pathname } = useLocation()
 	const translations = useSelector(selectTranslations)
+	const navigate = useNavigate()
+	if (pathToArray(pathname).some(path => path.startsWith(prohibited))) return
 	return (
 		<>
 			<div className={styles.header}>
 				<div className='container'>
 					<div className={styles.navbar}>
 						<div className={styles.left}>
-							{/* <div className={styles.logo}> */}
-							<img src='/images/logo.webp' className='logo_img' alt='logo' />
-							<p>Donstroy Project</p>
-							{/* </div> */}
+							<img
+								src='/images/logo.webp'
+								className='logo_img'
+								alt='logo'
+								onClick={() => navigate('/')}
+							/>
+							<p>Don Stroy Project</p>
 							<button className='btn'>{translations.header.button1}</button>
 						</div>
 						<div className={styles.center}>
@@ -73,7 +81,11 @@ export const Header = () => {
 					</div>
 					<div className={styles.drop_btns}>
 						{translations.header.drop_cources.map(cource => (
-							<button className='btn' key={cource}>
+							<button
+								className='btn'
+								onClick={() => navigate('/admin/students')}
+								key={cource}
+							>
 								{cource}
 							</button>
 						))}

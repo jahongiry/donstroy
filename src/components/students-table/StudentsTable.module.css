@@ -1,0 +1,74 @@
+.table_container {
+	width: 100%;
+	height: 100vh;
+	display: block;
+	overflow: scroll;
+}
+.table {
+	width: 940px;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.table th {
+	color: var(--color-gray);
+	background-color: var(--color-light-blue);
+	position: relative;
+	/* font-size: 13px; */
+}
+.table th svg {
+	font-size: 15px;
+	position: absolute;
+	top: 3px;
+	right: 5px;
+	color: #666;
+}
+.table th,
+.table td {
+	padding: 12px;
+	border: 1px solid #a08fa6;
+}
+
+.table td:nth-child(1) {
+	width: 20px;
+}
+.table td:nth-child(2) {
+	width: 190px;
+}
+.table td:nth-child(3) {
+	width: 180px;
+}
+.table td:nth-child(4) {
+	width: 160px;
+}
+.table td:nth-child(5) {
+	width: 108px;
+}
+.table td:nth-child(6) {
+	width: 70px;
+	cursor: pointer;
+}
+.table td:nth-child(6) img {
+	width: 40px;
+	margin-left: 17px;
+}
+.table td:nth-child(7) {
+	width: 145px;
+}
+.table tr:nth-child(even) {
+	background-color: var(--color-light-blue);
+	color: var(--color-gray);
+}
+.action_btn {
+	padding: 6px 12px;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	user-select: none;
+}
+.action_btn:nth-child(1) {
+	background-color: aqua;
+}
+.action_btn:nth-child(2) {
+	background-color: red;
+	margin-left: 10px;
+}

@@ -69,5 +69,21 @@
 			]
 		},
 		"span": "Все права защищены."
+	},
+	"adminPanel": {
+		"buttons": [
+			{ "button": "Студенты", "link": "/admin/students", "yCordinate": "28px" },
+			{
+				"button": "Добавить студента",
+				"link": "/admin/add-student",
+				"yCordinate": "84px"
+			},
+			{
+				"button": "Добавить курс",
+				"link": "/admin/add-cource",
+				"yCordinate": "146px"
+			},
+			{ "button": "Курсы", "link": "/admin/cources", "yCordinate": "205px" }
+		]
 	}
 }

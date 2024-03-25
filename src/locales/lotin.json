@@ -64,5 +64,13 @@
 			]
 		},
 		"span": "Barcha huquqlar himoyalangan."
+	},
+	"adminPanel": {
+		"buttons": [
+			{ "button": "Studentlar", "link": "/admin/students" },
+			{ "button": "Student qoshish", "link": "/admin/add-student" },
+			{ "button": "Kurs qoshish", "link": "/admin/add-cource" },
+			{ "button": "Kurslar", "link": "/admin/cources" }
+		]
 	}
 }

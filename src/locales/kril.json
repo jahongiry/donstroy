@@ -64,5 +64,25 @@
 			]
 		},
 		"span": "Барча ҳуқуқлар ҳимояланган."
+	},
+	"adminPanel": {
+		"buttons": [
+			{
+				"button": "Студентлар",
+				"link": "/admin/students",
+				"yCordinate": "28px"
+			},
+			{
+				"button": "Студент қўшиш",
+				"link": "/admin/add-student",
+				"yCordinate": "84px"
+			},
+			{
+				"button": "Курс қўшиш",
+				"link": "/admin/add-cource",
+				"yCordinate": "146px"
+			},
+			{ "button": "Курслар", "link": "/admin/cources", "yCordinate": "205px" }
+		]
 	}
 }
