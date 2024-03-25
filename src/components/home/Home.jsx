@@ -1,23 +1,21 @@
-import { Route, Routes } from 'react-router-dom'
-import { AdminPage } from '../../pages/admin-page/AdminPage'
-import Auth from '../../pages/auth/Auth'
-import { routes } from '../../routes'
-import { Footer } from '../footer/Footer'
-import { Header } from '../header/Header'
+import { Route, Routes } from 'react-router-dom';
+import { MainPage } from '../../pages/main-page/MainPage';
+import { AdminPage } from '../../pages/admin-page/AdminPage';
+import { Footer } from '../footer/Footer';
+import { Header } from '../header/Header';
+import StudentPage from '../../pages/student-page/StudentPage';
 
 export const Home = () => {
-	return (
-		<>
-			<Header />
-			<Routes>
-				{routes.map(route => (
-					<Route key={route.path} {...route} />
-				))}
-				<Route path='/' element={<Auth />}>
-					<Route path='/admin' element={<AdminPage />} />
-				</Route>
-			</Routes>
-			<Footer />
-		</>
-	)
-}
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/admin' element={<AdminPage />} />
+        <Route path='/students/:id' element={<StudentPage />} />
+      </Routes>
+      <Footer />
+    </>
+  );
+};
+
