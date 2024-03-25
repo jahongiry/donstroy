@@ -1,18 +1,13 @@
 import { useSelector } from 'react-redux'
+import { useLocation } from 'react-router-dom'
+import { pathToArray, prohibited } from '../../routes/ProhibitedPath'
 import { selectTranslations } from '../../slices/LanguageSlice'
 import styles from './Footer.module.css'
-// const linksLeft = ['Aniq fanlar', 'Tabiiy fanlar', 'Xorijiy tillar', 'PISA']
-// const linksCeneter = ['Akkaunt', 'Sozlamalar', "E'lonlar"]
-// const linksRight = [
-// 	'Biz haqimizda',
-// 	'Konfidensiallik siyosati',
-// 	'Yordam',
-// 	'Malaka oshirishni tashkil etishga ariza topshirish',
-// 	'FAQ',
-// ]
-
 export const Footer = () => {
+	const { pathname } = useLocation()
+	const arrayPathname = [pathname]
 	const translations = useSelector(selectTranslations)
+	if (pathToArray(pathname).some(path => path.startsWith(prohibited))) return
 	return (
 		<div className={styles.main_footer}>
 			<div className='container'>
