@@ -11,14 +11,15 @@
 }
 .table th {
 	color: var(--color-gray);
-	background-color: #f0cb73;
+	background-color: var(--color-light-blue);
 	position: relative;
+	/* font-size: 13px; */
 }
 .table th svg {
-	font-size: 20px;
+	font-size: 15px;
 	position: absolute;
-	top: 5px;
-	right: 10px;
+	top: 3px;
+	right: 5px;
 	color: #666;
 }
 .table th,
@@ -43,18 +44,12 @@
 	width: 108px;
 }
 .table td:nth-child(6) {
-	width: 113.9px;
-	min-height: 79px;
-	height: auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border: none;
-	border-bottom: 1px solid var(--color-gray);
+	width: 70px;
 	cursor: pointer;
 }
 .table td:nth-child(6) img {
-	width: 77px;
+	width: 40px;
+	margin-left: 17px;
 }
 .table td:nth-child(7) {
 	width: 145px;

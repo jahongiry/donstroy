@@ -81,7 +81,11 @@ export const Header = () => {
 					</div>
 					<div className={styles.drop_btns}>
 						{translations.header.drop_cources.map(cource => (
-							<button className='btn' key={cource}>
+							<button
+								className='btn'
+								onClick={() => navigate('/admin/students')}
+								key={cource}
+							>
 								{cource}
 							</button>
 						))}
