@@ -5,7 +5,7 @@ import { fetchStudentDetails } from '../../slices/studentSlice';
 import MAIN_URL from '../../urls/MainUrl';
 
 const StudentPage = () => {
-  const { id } = useParams(); // Get the student ID from the URL
+  const { id } = useParams();
   const dispatch = useDispatch();
   const student = useSelector((state) => state.student.student);
   const loading = useSelector((state) => state.student.loading);
