@@ -6,16 +6,21 @@ import { Header } from '../header/Header';
 import StudentPage from '../../pages/student-page/StudentPage';
 
 export const Home = () => {
-  return (
-    <>
-      <Header />
-      <Routes>
-        <Route path='/' element={<MainPage />} />
-        <Route path='/admin' element={<AdminPage />} />
-        <Route path='/students/:id' element={<StudentPage />} />
-      </Routes>
-      <Footer />
-    </>
-  );
-};
 
+	return (
+		<div className='content'>
+			<div>
+				<Header />
+				<Routes>
+					{routes.map(route => (
+						<Route key={route.path} {...route} />
+					))}
+					<Route path='/' element={<Auth />}>
+						<Route path='/admin' element={<AdminPage />} />
+					</Route>
+				</Routes>
+			</div>
+			<Footer />
+		</div>
+	)
+}
