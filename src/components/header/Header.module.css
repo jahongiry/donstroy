@@ -9,7 +9,7 @@
 	z-index: 50;
 }
 .navbar {
-	height: 80px;
+	height: 100px;
 	width: 100%;
 	color: var(--color-dark-blue);
 	display: flex;
@@ -149,7 +149,7 @@
 	transition: 0.5s;
 }
 .header_space {
-	padding: 40px 0;
+	padding: 80px 0;
 }
 .x_btn {
 	position: fixed;
@@ -230,10 +230,22 @@
 		font-size: 20px;
 	}
 }
-@media (max-width: 400px) {
+@media (max-width: 470px) {
 	.left p {
-		font-size: 16px;
+		font-size: 13px;
 	}
+}
+@media (max-width: 440px) {
+	.left p {
+		font-size: 12px;
+	}
+}
+@media (max-width: 430px) {
+	.left p {
+		font-size: 10px;
+	}
+}
+/* @media (max-width: 400px) {
 	.right button {
 		padding: 8px 9px !important;
 	}
@@ -244,7 +256,7 @@
 		font-size: 10px;
 		padding: 10px 5px;
 	}
-}
+} */
 @media (max-width: 350px) {
 	.left p {
 		display: none;

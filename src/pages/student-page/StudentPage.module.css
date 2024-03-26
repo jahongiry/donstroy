@@ -6,13 +6,6 @@
 	align-items: center;
 	height: 100vh;
 }
-.student_id {
-	position: absolute;
-	top: 30px;
-	right: 20px;
-	font-size: 20px !important;
-	z-index: 0;
-}
 .student p {
 	font-size: 50px;
 	color: var(--color-dark-blue);
@@ -45,7 +38,7 @@
 }
 .share {
 	position: absolute;
-	top: 25px;
+	top: 19px;
 	left: 10px;
 	font-size: 20px;
 	background-color: transparent;
@@ -55,8 +48,10 @@
 	align-items: center;
 	gap: 5px;
 	color: var(--color-light-blue);
+	width: 120px;
 	padding: 5px;
 	border: 1px solid var(--color-light-blue);
+	display: none;
 }
 .download button {
 	background-color: transparent;
@@ -65,12 +60,6 @@
 }
 
 @media (max-width: 450px) {
-	.student_id {
-		position: none;
-		/* position: static; */
-		/* top: 8px;
-		right: 0; */
-	}
 	.download {
 		position: none;
 		top: 15px;
@@ -78,21 +67,38 @@
 		width: 150px;
 		font-size: 14px;
 	}
+	.share {
+		position: none;
+		top: 15px;
+		right: 10px;
+		width: 150px;
+		font-size: 14px;
+		display: block;
+	}
 	.student p {
-		padding: 30px 0 0;
+		padding: 100px 0 0;
 	}
 }
 @media (max-width: 400px) {
 	.download {
 		top: 40px;
 		/* right: 85px; */
-		left: 50%;
+		left: 60%;
+		transform: translateX(-50%);
+		/* right: ; */
+		/* transform: translateX(-50%); */
+	}
+	.share {
+		width: 80px;
+		top: 40px;
+		/* right: 85px; */
+		left: 20%;
 		transform: translateX(-50%);
 		/* right: ; */
 		/* transform: translateX(-50%); */
 	}
 	.student p {
-		padding: 10px 0 0;
+		padding: 20px 0 0;
 		font-size: 25px;
 	}
 }

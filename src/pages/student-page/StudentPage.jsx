@@ -150,23 +150,24 @@ const StudentPage = () => {
 
 	return (
 		<div className={styles.student}>
-			<p className={styles.student_id}>ID: {id}</p>
 			{student && (
 				<div className={styles.student_info}>
 					<p>{student?.name}</p>
 					<img
 						src={`https://donstroy-api-production.up.railway.app${student?.certificate_url}`}
 						alt='certificate'
-						onLoad={() => setImageLoading(false)} // Set imageLoading to false when image loads
+						onLoad={() => setImageLoading(false)}
 					/>
 				</div>
 			)}
-			<button className={styles.download} onClick={handleDownloadClick}>
-				Download as PNG <MdSimCardDownload />
-			</button>
-			<button className={styles.share} onClick={handleShareClick}>
-				Share <MdShare />
-			</button>
+			<div className={styles.btns}>
+				<button className={styles.download} onClick={handleDownloadClick}>
+					Download as PNG <MdSimCardDownload />
+				</button>
+				<button className={styles.share} onClick={handleShareClick}>
+					Share <MdShare />
+				</button>
+			</div>
 		</div>
 	)
 }

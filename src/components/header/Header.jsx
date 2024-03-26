@@ -36,7 +36,7 @@ export const Header = () => {
 						<div className={styles.left}>
 							<div onClick={() => navigate('/')}>
 								<img src='/images/logo.webp' className='logo_img' alt='logo' />
-								<p>Don Stroy Project</p>
+								<p>DON STROY PROJECT</p>
 							</div>
 							<button className='btn' onClick={() => navigate('/sertificates')}>
 								{translations.header.button1}
