@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectTranslations } from '../../slices/LanguageSlice'
 import styles from './MainPage.module.css'
+
 export const MainPage = () => {
+	const [showCall, setShowCall] = useState()
 	const translations = useSelector(selectTranslations)
 	return (
 		<div className='container'>
@@ -15,6 +18,7 @@ export const MainPage = () => {
 					<img src='/images/donstroy_building.webp' alt='donstroy building' />
 				</div>
 			</div>
+			{showCall && <div className={styles.call_center}></div>}
 		</div>
 	)
 }

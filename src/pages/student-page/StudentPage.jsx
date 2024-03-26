@@ -162,7 +162,8 @@ const StudentPage = () => {
 			)}
 			<div className={styles.btns}>
 				<button className={styles.download} onClick={handleDownloadClick}>
-					Download as PNG <MdSimCardDownload />
+					Download
+					<MdSimCardDownload />
 				</button>
 				<button className={styles.share} onClick={handleShareClick}>
 					Share <MdShare />

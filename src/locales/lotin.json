@@ -47,6 +47,11 @@
 	"sertificates": {
 		"search": "Izlash"
 	},
+	"cource": {
+		"title1": "Kurs nomi",
+		"title2": "O'qituvchilar",
+		"title3": "Ustozlar"
+	},
 	"footer": {
 		"title1": {
 			"title": "KURSLAR",
