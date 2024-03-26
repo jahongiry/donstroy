@@ -1,22 +1,29 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
+import { data } from '../../pages/admin-page/students/Students'
 import styles from './ZoomImage.module.css'
-export const ZoomImage = ({ data, img, setShowZoomImage }) => {
+export const ZoomImage = ({ img, setShowZoomImage }) => {
+	const navigate = useNavigate()
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			className={styles.zoom_img}
-			onClick={() => setShowZoomImage(false)}
 		>
 			{data.find(item => item.id === img) ? (
 				<img
 					key={img}
 					src={data.find(item => item.id === img).certificate}
 					alt='img'
+					onClick={() => navigate(`/student/${img}`)}
 				/>
 			) : (
-				<p>Home</p>
+				<></>
 			)}
+			<div
+				className={styles.dark}
+				onClick={() => setShowZoomImage(false)}
+			></div>
 		</motion.div>
 	)
 }

@@ -1,8 +1,16 @@
+import { useState } from 'react'
 import { FaChalkboardTeacher } from 'react-icons/fa'
 import { IoSettingsOutline } from 'react-icons/io5'
 import { MdDriveFileRenameOutline, MdOutlineDescription } from 'react-icons/md'
+import { CourceEdit } from '../cource-edit/CourceEdit'
 import styles from './CourcesTable.module.css'
 const CourcesTable = ({ data }) => {
+	const [showEditModal, setShowEditModal] = useState(false)
+	const [id, setId] = useState(0)
+	const handleEdit = id => {
+		setId(id)
+		setShowEditModal(true)
+	}
 	return (
 		<div className={styles.table_container}>
 			<table className={styles.table}>
@@ -10,7 +18,7 @@ const CourcesTable = ({ data }) => {
 					<tr>
 						<th>ID</th>
 						<th>
-							Name
+							Cource name
 							<MdDriveFileRenameOutline />
 						</th>
 						<th>
@@ -38,13 +46,21 @@ const CourcesTable = ({ data }) => {
 									${item.teacher.split(' ')[1].slice(0, 1)}.`}
 							</td>
 							<td>
-								<button className={styles.action_btn}>Edit</button>
+								<button
+									className={styles.action_btn}
+									onClick={() => handleEdit(item.id)}
+								>
+									Edit
+								</button>
 								<button className={styles.action_btn}>Delete</button>
 							</td>
 						</tr>
 					))}
 				</tbody>
 			</table>
+			{showEditModal && (
+				<CourceEdit id={id} setShowEditModal={setShowEditModal} />
+			)}
 		</div>
 	)
 }

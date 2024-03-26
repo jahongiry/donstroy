@@ -1,0 +1,83 @@
+.student {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.student_id {
+	position: absolute;
+	top: 30px;
+	right: 20px;
+	font-size: 20px !important;
+	z-index: 0;
+}
+.student p {
+	font-size: 50px;
+	color: var(--color-dark-blue);
+}
+.student_info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+.student img {
+	width: 300px;
+	cursor: pointer;
+}
+.download {
+	position: absolute;
+	top: 25px;
+	right: 80px;
+	font-size: 20px;
+	background-color: transparent;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	color: var(--color-light-blue);
+	padding: 5px;
+	border: 1px solid var(--color-light-blue);
+}
+.download button {
+	background-color: transparent;
+	border: none;
+	color: var(--color-dark-blue);
+}
+
+@media (max-width: 450px) {
+	.student_id {
+		position: none;
+		/* position: static; */
+		/* top: 8px;
+		right: 0; */
+	}
+	.download {
+		position: none;
+		top: 15px;
+		right: 10px;
+		width: 150px;
+		font-size: 14px;
+	}
+	.student p {
+		padding: 30px 0 0;
+	}
+}
+@media (max-width: 400px) {
+	.download {
+		top: 40px;
+		/* right: 85px; */
+		left: 50%;
+		transform: translateX(-50%);
+		/* right: ; */
+		/* transform: translateX(-50%); */
+	}
+	.student p {
+		padding: 10px 0 0;
+		font-size: 25px;
+	}
+}

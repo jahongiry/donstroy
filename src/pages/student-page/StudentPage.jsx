@@ -1,47 +1,58 @@
 import React, { useEffect } from 'react'
+import { MdSimCardDownload } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import DownloadImage from '../../components/download-img/DownloadImg'
 import { fetchStudentDetails } from '../../slices/studentSlice'
-import MAIN_URL from '../../urls/MainUrl'
+import styles from './StudentPage.module.css'
 
 const StudentPage = () => {
 	const { id } = useParams()
+	const params = useParams()
 	const dispatch = useDispatch()
 	const student = useSelector(state => state.student.student)
 	const loading = useSelector(state => state.student.loading)
 	const error = useSelector(state => state.student.error)
-
 	useEffect(() => {
 		dispatch(fetchStudentDetails(id))
 	}, [dispatch, id])
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [params])
 
 	if (loading) {
-		return <div>Loading...</div>
+		return (
+			<div className='layout_loatder'>
+				<div className='loader'></div>
+			</div>
+		)
 	}
 
 	if (error) {
-		return <div>Error: {error}</div>
+		return (
+			<div className='error'>
+				<p>Error: {error}</p>
+			</div>
+		)
 	}
-
-	console.log(student)
-
 	return (
-		<div>
-			<h2>Student Details</h2>
-			<p>ID: {id}</p>
+		<div className={styles.student}>
+			<p className={styles.student_id}>ID: {id}</p>
 			{student && (
-				<div>
-					<p>Name: {student.name}</p>
+				<div className={styles.student_info}>
+					<p>{student?.name}</p>
 					<img
-						src={`https://donstroy-api-production.up.railway.app/${student.certificate_url}`}
+						src={`https://donstroy-api-production.up.railway.app${student?.certificate_url}`}
 						alt='certificate'
 					/>
-					<p>
-						{MAIN_URL}
-						{student.certificate_url}
-					</p>
 				</div>
 			)}
+			<button className={styles.download}>
+				<MdSimCardDownload />
+				<DownloadImage
+					imageUrl={`https://donstroy-api-production.up.railway.app${student?.certificate_url}`}
+				/>
+			</button>
 		</div>
 	)
 }

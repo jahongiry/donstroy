@@ -3,11 +3,18 @@ import { BsCalendar2Date } from 'react-icons/bs'
 import { FaChalkboardTeacher } from 'react-icons/fa'
 import { IoSettingsOutline } from 'react-icons/io5'
 import { MdDriveFileRenameOutline, MdOutlineDescription } from 'react-icons/md'
+import { StudentEdit } from '../student-edit/StudentEdit'
 import { ZoomImage } from '../zoom-image/ZoomImage'
 import styles from './StudentsTable.module.css'
 const StudensTable = ({ data }) => {
 	const [showZoomImage, setShowZoomImage] = useState(false)
+	const [showEditModal, setShowEditModal] = useState(false)
 	const [img, setImg] = useState(0)
+
+	const handleClick = id => {
+		setImg(id)
+		setShowEditModal(true)
+	}
 
 	return (
 		<div className={styles.table_container}>
@@ -53,7 +60,11 @@ const StudensTable = ({ data }) => {
 							</td>
 							<td>{item.courseName.slice(0, 15)}...</td>
 							<td>{item.description.slice(0, 15)}...</td>
-							<td>{item.date}</td>
+							<td>
+								{`${item.date.split('-')[1]}-${item.date.split('-')[2]}-${
+									item.date.split('-')[0]
+								}`}
+							</td>
 							<td
 								onClick={() => {
 									setShowZoomImage(true)
@@ -63,7 +74,12 @@ const StudensTable = ({ data }) => {
 								<img src={item.certificate} alt='img' />
 							</td>
 							<td>
-								<button className={styles.action_btn}>Edit</button>
+								<button
+									className={styles.action_btn}
+									onClick={() => handleClick(item.id)}
+								>
+									Edit
+								</button>
 								<button className={styles.action_btn}>Delete</button>
 							</td>
 						</tr>
@@ -71,7 +87,10 @@ const StudensTable = ({ data }) => {
 				</tbody>
 			</table>
 			{showZoomImage && (
-				<ZoomImage data={data} img={img} setShowZoomImage={setShowZoomImage} />
+				<ZoomImage img={img} setShowZoomImage={setShowZoomImage} />
+			)}
+			{showEditModal && (
+				<StudentEdit id={img} setShowEditModal={setShowEditModal} />
 			)}
 		</div>
 	)

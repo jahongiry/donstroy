@@ -19,21 +19,28 @@ export const Header = () => {
 	const { pathname } = useLocation()
 	const translations = useSelector(selectTranslations)
 	const navigate = useNavigate()
-	if (pathToArray(pathname).some(path => path.startsWith(prohibited))) return
+	// if (pathToArray(pathname).some(path => path.startsWith(prohibited))) return
+	// if (pathname === '*') return
+	const isNotFoundPage =
+		pathToArray(pathname).some(path => path.startsWith(prohibited)) ||
+		pathname === '*'
+
+	if (isNotFoundPage) {
+		return null
+	}
 	return (
 		<>
 			<div className={styles.header}>
 				<div className='container'>
 					<div className={styles.navbar}>
 						<div className={styles.left}>
-							<img
-								src='/images/logo.webp'
-								className='logo_img'
-								alt='logo'
-								onClick={() => navigate('/')}
-							/>
-							<p>Don Stroy Project</p>
-							<button className='btn'>{translations.header.button1}</button>
+							<div onClick={() => navigate('/')}>
+								<img src='/images/logo.webp' className='logo_img' alt='logo' />
+								<p>Don Stroy Project</p>
+							</div>
+							<button className='btn' onClick={() => navigate('/sertificates')}>
+								{translations.header.button1}
+							</button>
 						</div>
 						<div className={styles.center}>
 							<div className={`${styles.cources}`}>
@@ -83,7 +90,9 @@ export const Header = () => {
 						{translations.header.drop_cources.map(cource => (
 							<button
 								className='btn'
-								onClick={() => navigate('/admin/students')}
+								onClick={() => {
+									navigate('/admin/students'), setShowCourcesTable(false)
+								}}
 								key={cource}
 							>
 								{cource}

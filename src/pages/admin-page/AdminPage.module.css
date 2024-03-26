@@ -4,8 +4,6 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	/* display: grid;
-	grid-template-columns: 200px 1fr; */
 }
 .mange_admin {
 	width: 350px;
@@ -71,58 +69,5 @@
 }
 .admin_view {
 	min-width: 73.4%;
-	/*
-	width: 100%; */
 	padding: 0 0 0 20px;
-}
-.small_sidebar {
-	position: relative;
-	width: 60px;
-	height: 100vh;
-	background-color: var(--color-light-blue);
-	transition: 0.5s;
-}
-.small_sidebar img {
-	display: none;
-}
-.small_sidebar .btns {
-	display: none;
-}
-.small_sidebar .icon_buttons {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-}
-.small_sidebar .icon_buttons svg {
-	font-size: 25px;
-	color: var(--color-dark-blue);
-}
-.small_sidebar .icon_buttons .add {
-	position: relative;
-}
-.small_sidebar .icon_buttons .add .plus {
-	position: absolute;
-	top: 5px;
-	right: 5px;
-	font-size: 14px;
-}
-.small_sidebar .icon_buttons .plus {
-	position: absolute;
-	top: 0;
-}
-.small_sidebar .icon_buttons button {
-	border-radius: 50%;
-	padding: 10px;
-	background-color: #fff;
-	border: 2px solid var(--color-dark-blue);
-	transition: all 0.3s ease-in-out;
-}
-.small_sidebar .icon_buttons button:hover {
-	background-color: var(--color-light-blue);
-}
-.small_sidebar .icon_buttons button:active {
-	transform: scale(0.9);
 }

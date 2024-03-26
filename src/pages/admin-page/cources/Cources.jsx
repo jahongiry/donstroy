@@ -1,5 +1,4 @@
-import CourcesTable from '../../../components/cources-table/CourcesTable'
-const data = [
+export const data = [
 	{
 		id: 1,
 		name: 'Introduction to Web DevelopmentIntroduction to Web DevelopmentIntroduction to Web DevelopmentIntroduction to Web DevelopmentIntroduction to Web DevelopmentIntroduction to Web Development',
@@ -139,8 +138,7 @@ const data = [
 		teacher: 'Isabella Thompson',
 	},
 ]
-
-export default data
+import CourcesTable from '../../../components/cources-table/CourcesTable'
 
 export const Cources = () => {
 	return (

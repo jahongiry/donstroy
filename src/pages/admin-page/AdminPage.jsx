@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { BiArrowFromRight } from 'react-icons/bi'
-import { FaArrowLeft, FaArrowRight, FaDiscourse, FaPlus } from 'react-icons/fa'
-import { PiStudentBold } from 'react-icons/pi'
 import { useSelector } from 'react-redux'
 import { NavLink, Route, Routes, useNavigate } from 'react-router-dom'
 import { routes } from '../../routes/AdminPageRoute'
@@ -34,34 +32,7 @@ export const AdminPage = () => {
 					))}
 					<BiArrowFromRight style={{ top: cordinate }} />
 				</div>
-				<button className={styles.svg} onClick={() => setShowSideBar(v => !v)}>
-					{!showSideBar ? <FaArrowLeft /> : <FaArrowRight />}
-				</button>
-				<div className={styles.icon_buttons}>
-					<NavLink to={'/admin/students'}>
-						<button>
-							<PiStudentBold />
-						</button>
-					</NavLink>
-					<NavLink to={'/admin/add-student'} className={styles.add}>
-						<button>
-							<PiStudentBold />
-						</button>
-						<FaPlus className={styles.plus} />
-					</NavLink>
-					<NavLink to={'/admin/cources'} className={styles.add}>
-						<button>
-							<FaDiscourse />
-						</button>
-						<FaPlus className={styles.plus} />
-					</NavLink>
-					<NavLink to={'/admin/add-cource'}>
-						<button>
-							<FaDiscourse />
-						</button>
-					</NavLink>
 				</div>
-			</div>
 			<div className={styles.admin_view}>
 				<Routes>
 					{routes.map(route => (

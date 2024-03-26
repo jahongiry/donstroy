@@ -1,0 +1,15 @@
+.date-picker-container {
+	position: relative;
+}
+.date-picker-input {
+	width: 200px;
+	padding: 10px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	font-size: 16px;
+	outline: none;
+}
+.date-picker-input:focus {
+	border-color: #007bff;
+	box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
