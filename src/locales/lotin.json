@@ -42,7 +42,10 @@
 	"mainPage": {
 		"title": "«Uzluksiz kasbiy ta’lim» elektron platformasi",
 		"p": "«Uzluksiz kasbiy ta’lim» elektron platformasi",
-		"button": "Malaka oshirishni boshlash"
+		"button": "Malaka oshirishni boshlash",
+		"callCenter": "Bizning administratorlarimiz tez orada siz bilan bog'lanishadi.",
+		"text": "Izohingizni qoldiring",
+		"button2": "Jo'natish"
 	},
 	"sertificates": {
 		"search": "Izlash"

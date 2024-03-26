@@ -91,7 +91,7 @@ export const Header = () => {
 							<button
 								className='btn'
 								onClick={() => {
-									navigate('/admin/students'), setShowCourcesTable(false)
+									// navigate('/admin/students'), setShowCourcesTable(false)
 								}}
 								key={cource}
 							>

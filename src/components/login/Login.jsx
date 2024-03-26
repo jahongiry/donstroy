@@ -4,11 +4,13 @@ import { useForm } from 'react-hook-form'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
 import { TiWarningOutline } from 'react-icons/ti'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { selectTranslations } from '../../slices/LanguageSlice'
 import styles from './Login.module.css'
 export const Login = ({ setShowLogin }) => {
 	const [showPassword, setShowPassword] = useState(false)
 	const translatioins = useSelector(selectTranslations)
+	const navigate = useNavigate()
 	const {
 		register,
 		handleSubmit,

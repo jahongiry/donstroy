@@ -29,6 +29,13 @@
 .mange_admin .icon_buttons {
 	display: none;
 }
+.log_out {
+	position: fixed;
+	top: 20px;
+	left: 310px;
+	color: var(--color-dark-blue);
+	cursor: pointer;
+}
 .btns {
 	position: relative;
 }

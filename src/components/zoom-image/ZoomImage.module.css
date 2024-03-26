@@ -14,11 +14,19 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 420px !important;
+	width: 700px !important;
 	z-index: 60;
 }
 @media (max-width: 450px) {
 	.zoom_img img {
-		width: 320px !important;
+		width: 430px !important;
+		padding: 0 50px;
+	}
+}
+@media (max-width: 350px) {
+	.zoom_img img {
+		padding: 0 70px;
+		/* width: 20px !important; */
+		/* width: 420px !important; */
 	}
 }

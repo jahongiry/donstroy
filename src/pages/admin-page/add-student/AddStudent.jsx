@@ -16,7 +16,7 @@ export const AddStudent = () => {
 		setStudentName('')
 		setCourceName('')
 		setDescription('')
-		useState('')
+		setDate('')
 	}
 	function handleFileChange(event) {
 		const file = event.target.files[0]

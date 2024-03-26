@@ -1,5 +1,6 @@
+import { FaTelegramPlane } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { pathToArray, prohibited } from '../../routes/ProhibitedPath'
 import { selectTranslations } from '../../slices/LanguageSlice'
 import styles from './Footer.module.css'
@@ -44,6 +45,11 @@ export const Footer = () => {
 										<a href=''>{link}</a>
 									</li>
 								))}
+								<li className={styles.telegram}>
+									<Link to={'https://t.me/don_stroy_project'} target='_blank'>
+										<FaTelegramPlane />
+									</Link>
+								</li>
 							</ul>
 						</div>
 					</div>

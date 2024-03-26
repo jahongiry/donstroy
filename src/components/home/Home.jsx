@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { AdminPage } from '../../pages/admin-page/AdminPage'
 import Auth from '../../pages/auth/Auth'
 import { routes } from '../../routes'
@@ -20,6 +22,7 @@ export const Home = () => {
 				</Routes>
 			</div>
 			<Footer />
+		<ToastContainer />
 		</div>
 	)
 }

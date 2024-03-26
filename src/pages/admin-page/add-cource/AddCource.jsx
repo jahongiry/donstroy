@@ -8,11 +8,13 @@ export const AddCource = () => {
 	const [description, setDescription] = useState('')
 	const [selectedFile, setSelectedFile] = useState(null)
 	const [imagePreview, setImagePreview] = useState('')
+	console.log(teacherName)
 	const handleCreate = () => {
-		setStudentName('')
 		setCourceName('')
+		setTeacherName('')
 		setDescription('')
-		useState('')
+		setSelectedFile()
+		setImagePreview('')
 	}
 	function handleFileChange(event) {
 		const file = event.target.files[0]
