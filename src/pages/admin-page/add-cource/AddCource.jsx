@@ -6,6 +6,7 @@ import EmailEditor from '../../../components/email-editor/EmailEditor';
 import styles from './AddCource.module.css';
 
 export const AddCource = () => {
+
   const dispatch = useDispatch();
   const [courceName, setCourceName] = useState('');
   const [teacherName, setTeacherName] = useState('');

@@ -69,7 +69,6 @@ export const Header = () => {
   if (isNotFoundPage) {
     return null;
   }
-
   return (
     <>
       <div className={styles.header}>

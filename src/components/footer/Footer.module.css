@@ -32,8 +32,19 @@
 	line-height: 22px;
 	font-weight: 400;
 }
+.right {
+	position: relative;
+}
 .right ul {
 	padding: 0 0 30px;
+}
+.telegram {
+	position: absolute;
+	bottom: 22px;
+	left: 60px;
+}
+.telegram svg {
+	font-size: 25px;
 }
 footer p {
 	text-align: center;
