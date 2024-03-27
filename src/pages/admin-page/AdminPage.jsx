@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { BiArrowFromRight } from 'react-icons/bi';
 import { useSelector, useDispatch } from 'react-redux';
@@ -7,6 +6,7 @@ import { routes } from '../../routes/AdminPageRoute';
 import { selectTranslations } from '../../slices/LanguageSlice';
 import styles from './AdminPage.module.css';
 import { logOutUser } from '../../slices/loginSlice';
+import Auth from '../auth/Auth';
 
 export const AdminPage = () => {
   const [buttonPath, setButtonPath] = useState('');
@@ -50,12 +50,13 @@ export const AdminPage = () => {
       </div>
       <div className={styles.admin_view}>
         <Routes>
-          {routes.map((route) => (
-            <Route key={route.path} {...route} />
-          ))}
+          <Route path='/*' element={<Auth />}>
+            {routes.map((route) => (
+              <Route key={route.path} {...route} />
+            ))}
+          </Route>
         </Routes>
       </div>
     </div>
   );
 };
-

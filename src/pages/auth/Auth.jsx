@@ -1,12 +1,8 @@
-// import { Navigate, Outlet } from 'react-router-dom'
-// export const Auth = () => {
-// 	let user = true
-
-// 	return user ? <Outlet /> : <Navigate replace to={'/login'} />
-// }
-import { Navigate, Outlet } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { Navigate, Outlet } from 'react-router-dom';
 
 export default function Auth() {
-	let user = true
-	return user ? <Outlet /> : <Navigate replace to={'/'} />
+  const token = localStorage.getItem('token');
+
+  return token ? <Outlet /> : <Navigate replace to={'/'} />;
 }
