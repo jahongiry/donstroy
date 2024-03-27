@@ -10,8 +10,10 @@
 	width: 700px;
 	height: 35px;
 	outline: none;
-	border: 2px solid var(--color-light-blue);
-	color: var(--color-dark-blue);
+	/* border: 2px solid var(--color-light-blue); */
+	border: 2px solid #333;
+	/* color: var(--color-dark-blue); */
+	color: #998b82;
 	border-radius: 4px;
 }
 .add_cource :where(input:nth-child(1), input:nth-child(2)) {
@@ -46,8 +48,10 @@
 	font-size: 40px;
 	padding: 6px 10px;
 	border-radius: 4px;
-	color: var(--color-dark-blue);
-	border: 2px solid var(--color-light-blue);
+	/* color: var(--color-dark-blue); */
+	color: #333;
+	/* border: 2px solid var(--color-light-blue); */
+	border: 2px solid #998b82;
 }
 .img_edit img {
 	position: absolute;
@@ -61,8 +65,10 @@
 	width: 300px;
 	padding: 12px 20px;
 	border-radius: 8px;
-	color: var(--color-dark-blue);
-	background-color: var(--color-light-blue);
+	/* color: var(--color-dark-blue); */
+	color: #eee;
+	/* background-color: var(--color-light-blue); */
+	background-color: #333;
 	border: none;
 	font-size: 17px;
 	transition: 0.3s ease-in-out;

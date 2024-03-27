@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { CiCamera } from 'react-icons/ci'
 import { data } from '../../pages/admin-page/students/Students'
 import DatePicker from '../date-picker/DatePicker'
 import EmailEditor from '../email-editor/EmailEditor'
@@ -51,7 +50,7 @@ export const StudentEdit = ({ id, setShowEditModal }) => {
 						selectedDate={selectedDate}
 						setSelectedDate={setSelectedDate}
 					/>
-					<div className={styles.img_edit}>
+					{/* <div className={styles.img_edit}>
 						<div className={styles.upload}>
 							<input
 								type='file'
@@ -66,7 +65,7 @@ export const StudentEdit = ({ id, setShowEditModal }) => {
 							</div>
 						)}
 						<img src={imgUrl} alt='img' />
-					</div>
+					</div> */}
 				</div>
 				<EmailEditor text={text} setText={setText} />
 				<button className={styles.edit_btn} onClick={handleEndit}>
