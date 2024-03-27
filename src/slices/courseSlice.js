@@ -70,20 +70,17 @@ export const addCourse = createAsyncThunk(
   'courses/addCourse',
   async (courseData, { rejectWithValue }) => {
     try {
+      console.log('courseData', courseData);
       const token = localStorage.getItem('token');
       if (!token) {
         throw new Error('Token not found');
       }
       console.log(courseData);
-      const response = await axios.post(
-        `${MAIN_URL}/courses`,
-        { course: courseData },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await axios.post(`${MAIN_URL}/courses`, courseData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       return response.data;
     } catch (error) {

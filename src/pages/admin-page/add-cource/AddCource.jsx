@@ -6,45 +6,47 @@ import EmailEditor from '../../../components/email-editor/EmailEditor';
 import styles from './AddCource.module.css';
 
 export const AddCource = () => {
-
   const dispatch = useDispatch();
   const [courceName, setCourceName] = useState('');
   const [teacherName, setTeacherName] = useState('');
   const [description, setDescription] = useState('');
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [imagePreview, setImagePreview] = useState('');
+  const [selectedFiles, setSelectedFiles] = useState([]);
+  const [imagePreviews, setImagePreviews] = useState([]);
 
   const handleCreate = () => {
     const formData = new FormData();
     formData.append('course[name]', courceName);
     formData.append('course[teacher]', teacherName);
     formData.append('course[description]', description);
-    if (selectedFile) {
-      formData.append('course[images][]', selectedFile);
-    }
+    selectedFiles.forEach((file) => {
+      formData.append('course[images][]', file);
+    });
 
     dispatch(addCourse(formData));
 
-    // Reset form fields after dispatching
     setCourceName('');
     setTeacherName('');
     setDescription('');
-    setSelectedFile(null);
-    setImagePreview('');
+    setSelectedFiles([]);
+    setImagePreviews([]);
   };
 
   const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setSelectedFile(file);
+    const files = event.target.files;
+    const newSelectedFiles = Array.from(files);
+    setSelectedFiles(newSelectedFiles);
+
+    const newImagePreviews = [];
+    newSelectedFiles.forEach((file) => {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImagePreview(reader.result);
+        newImagePreviews.push(reader.result);
+        if (newImagePreviews.length === newSelectedFiles.length) {
+          setImagePreviews(newImagePreviews);
+        }
       };
       reader.readAsDataURL(file);
-    } else {
-      setSelectedFile(null);
-    }
+    });
   };
 
   return (
@@ -67,14 +69,15 @@ export const AddCource = () => {
             type='file'
             accept='image/png, image/jpeg'
             onChange={handleFileChange}
+            multiple
           />
           <CiCamera />
         </div>
-        {imagePreview && (
-          <div>
-            <img src={imagePreview} alt='Image Preview' />
+        {imagePreviews.map((preview, index) => (
+          <div key={index}>
+            <img src={preview} alt={`Image Preview ${index}`} />
           </div>
-        )}
+        ))}
       </div>
       <EmailEditor text={description} setText={setDescription} />
       <button onClick={handleCreate} className={styles.create_btn}>
