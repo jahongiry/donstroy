@@ -1,41 +1,81 @@
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { data } from '../../pages/admin-page/cources/Cources'
-import EmailEditor from '../email-editor/EmailEditor'
-import styles from './CourceEdit.module.css'
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchCourses, updateCourse } from '../../slices/courseSlice';
+import EmailEditor from '../email-editor/EmailEditor';
+import styles from './CourceEdit.module.css';
+
 export const CourceEdit = ({ id, setShowEditModal }) => {
-	const cource = data.find(cource => cource.id == id)
-	const [courcetName, setCourceName] = useState(cource.name)
-	const [teacher, setTeacher] = useState(cource.teacher)
-	const [description, setDescription] = useState(cource.description)
-	const handleEndit = () => {
-		setShowEditModal(false)
-	}
-	return (
-		<div className={styles.cource_edit}>
-			<div className={styles.edit}>
-				<p>ID: {cource.id}</p>
-				<input
-					type='text'
-					value={courcetName}
-					onChange={e => setCourceName(e.target.value)}
-				/>
-				<input
-					type='text'
-					value={teacher}
-					onChange={e => setTeacher(e.target.value)}
-				/>
-				<EmailEditor text={description} setText={setDescription} />
-				<button className={styles.edit_btn} onClick={handleEndit}>
-					Edit
-				</button>
-			</div>
-			<motion.div
-				initial={{ opacity: '0' }}
-				animate={{ opacity: '1' }}
-				className={styles.dark}
-				onClick={() => setShowEditModal(false)}
-			></motion.div>
-		</div>
-	)
-}
+  const dispatch = useDispatch();
+  const courses = useSelector((state) => state.courses.courses);
+  const [cource, setCource] = useState(null);
+  const [courcetName, setCourceName] = useState('');
+  const [teacher, setTeacher] = useState('');
+  const [description, setDescription] = useState('');
+
+  useEffect(() => {
+    dispatch(fetchCourses());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (courses) {
+      const selectedCource = courses.find((c) => c.id === id);
+      setCource(selectedCource);
+      setCourceName(selectedCource.name);
+      setTeacher(selectedCource.teacher);
+      setDescription(selectedCource.description);
+    }
+  }, [id, courses]);
+
+  const handleEdit = async () => {
+    if (!cource) return;
+    try {
+      await dispatch(
+        updateCourse({
+          id: cource.id,
+          courseData: {
+            // Pass course data as an object
+            name: courcetName,
+            description: description,
+            teacher: teacher,
+          },
+        })
+      );
+      setShowEditModal(false);
+    } catch (error) {
+      console.error('Error updating course:', error);
+    }
+  };
+
+  if (!cource) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div className={styles.cource_edit}>
+      <div className={styles.edit}>
+        <p>ID: {cource.id}</p>
+        <input
+          type='text'
+          value={courcetName}
+          onChange={(e) => setCourceName(e.target.value)}
+        />
+        <input
+          type='text'
+          value={teacher}
+          onChange={(e) => setTeacher(e.target.value)}
+        />
+        <EmailEditor text={description} setText={setDescription} />
+        <button className={styles.edit_btn} onClick={handleEdit}>
+          Edit
+        </button>
+      </div>
+      <motion.div
+        initial={{ opacity: '0' }}
+        animate={{ opacity: '1' }}
+        className={styles.dark}
+        onClick={() => setShowEditModal(false)}
+      ></motion.div>
+    </div>
+  );
+};
