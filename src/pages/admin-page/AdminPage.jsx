@@ -14,13 +14,13 @@ export const AdminPage = () => {
   localStorage.setItem('yCordinate', buttonPath);
   const cordinate = localStorage.getItem('yCordinate');
   const translations = useSelector(selectTranslations);
-  const dispatch = useDispatch(); // Get dispatch function
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
-      await dispatch(logOutUser()); // Dispatch logOutUser action
-      navigate('/'); // Redirect to main page upon successful logout
+      await dispatch(logOutUser());
+      navigate('/');
     } catch (error) {
       console.error('Logout failed:', error);
     }

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { selectTranslations } from '../../slices/LanguageSlice';
 import { fetchCourses } from '../../slices/courseSlice';
 import styles from './CourcePage.module.css';
+import MAIN_URL from '../../urls/MainUrl';
 
 export const Cource = () => {
   const translations = useSelector(selectTranslations);
@@ -34,8 +35,12 @@ export const Cource = () => {
           <p>{course.teacher}</p>
         </div>
         <div className={styles.images}>
-          {course.images.map((img) => (
-            <img key={img} src={img} alt='img' />
+          {course.images.map((img, index) => (
+            <img
+              key={index}
+              src={`https://donstroy-api-production.up.railway.app/${img}`}
+              alt='img'
+            />
           ))}
         </div>
       </div>
