@@ -8,7 +8,8 @@
 .mange_admin {
 	width: 350px;
 	height: 100vh;
-	background-color: var(--color-light-blue);
+	/* background-color: var(--color-light-blue); */
+	background-color: #333;
 	position: sticky;
 	z-index: 0;
 	top: 80px;
@@ -33,7 +34,8 @@
 	position: fixed;
 	top: 20px;
 	left: 310px;
-	color: var(--color-dark-blue);
+	/* color: var(--color-dark-blue); */
+	color: #eee;
 	cursor: pointer;
 }
 .btns {
@@ -44,7 +46,8 @@
 	padding: 9px 0;
 	margin-top: 20px;
 	font-size: 17px;
-	border: 1px solid var(--color-dark-blue);
+	/* border: 1px solid var(--color-dark-blue); */
+	border: 1px solid #eee;
 	color: var(--color-gray);
 	border-radius: 8px;
 	transition: all 0.3s ease-in-out;
@@ -54,7 +57,8 @@
 	top: 28px;
 	right: 10px;
 	font-size: 25px;
-	color: var(--color-dark-blue);
+	/* color: var(--color-dark-blue); */
+	color: #eee;
 	transition: all 0.3s ease-in-out;
 }
 .mange_admin button:hover {

@@ -10,8 +10,11 @@
 	border-spacing: 0;
 }
 .table th {
-	color: var(--color-gray);
-	background-color: #f0cb73;
+	/* color: var(--color-gray); */
+	color: #eee;
+	/* 6c6a6a */
+	/* background-color: #f0cb73; */
+	background-color: #6c6a6a;
 	position: relative;
 }
 .table th svg {
@@ -24,7 +27,7 @@
 .table th,
 .table td {
 	padding: 12px;
-	border: 1px solid #a08fa6;
+	border: 1px solid #998b82;
 }
 
 .table :where(th:nth-child(1), td:nth-child(1)) {
@@ -49,8 +52,10 @@
 	width: 145px;
 }
 .table tr:nth-child(even) {
-	background-color: var(--color-light-blue);
-	color: var(--color-gray);
+	/* background-color: var(--color-light-blue); */
+	background-color: #6c6a6a;
+	/* color: var(--color-gray); */
+	color: #eee;
 }
 .action_btn {
 	padding: 6px 12px;
@@ -60,9 +65,9 @@
 	user-select: none;
 }
 .action_btn:nth-child(1) {
-	background-color: aqua;
+	background-color: rgb(10, 168, 168);
 }
 .action_btn:nth-child(2) {
-	background-color: red;
+	background-color: rgb(234, 36, 36);
 	margin-left: 10px;
 }

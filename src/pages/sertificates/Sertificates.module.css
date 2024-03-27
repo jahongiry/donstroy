@@ -9,6 +9,7 @@
 .sertificates img {
 	width: 250px;
 	cursor: pointer;
+	border-radius: 8px;
 }
 .sertificates p {
 	font-size: 18px;
