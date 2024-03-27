@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { BiArrowFromRight } from 'react-icons/bi';
+import { LogOut } from 'lucide-react'
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, Route, Routes, useNavigate } from 'react-router-dom';
 import { routes } from '../../routes/AdminPageRoute';
@@ -34,7 +35,9 @@ export const AdminPage = () => {
           alt='logo img'
           onClick={() => navigate('/')}
         />
-        <button onClick={handleLogout}>Log out</button> {/* Logout button */}
+       	<button onClick={handleLogout} className={styles.logout}>
+					<LogOut />
+				</button>
         <div className={styles.btns}>
           {translations.adminPanel.buttons.map((button) => (
             <NavLink

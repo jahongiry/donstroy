@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import { data } from '../../pages/admin-page/students/Students'
+// import { data } from '../../pages/admin-page/students/Students'
 import styles from './ZoomImage.module.css'
 export const ZoomImage = ({ img, setShowZoomImage }) => {
 	const navigate = useNavigate()

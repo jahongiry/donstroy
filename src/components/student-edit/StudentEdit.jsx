@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { data } from '../../pages/admin-page/students/Students'
+// import { data } from '../../pages/admin-page/students/Students'
 import DatePicker from '../date-picker/DatePicker'
 import EmailEditor from '../email-editor/EmailEditor'
 import styles from './StudentEdit.module.css'

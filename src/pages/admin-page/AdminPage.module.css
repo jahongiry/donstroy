@@ -30,13 +30,15 @@
 .mange_admin .icon_buttons {
 	display: none;
 }
-.log_out {
+.logout {
 	position: fixed;
 	top: 20px;
 	left: 310px;
 	/* color: var(--color-dark-blue); */
-	color: #eee;
+	color: #b3afaf;
 	cursor: pointer;
+	background-color: transparent;
+	border: none;
 }
 .btns {
 	position: relative;
@@ -58,7 +60,7 @@
 	right: 10px;
 	font-size: 25px;
 	/* color: var(--color-dark-blue); */
-	color: #eee;
+	color: #b3afaf;
 	transition: all 0.3s ease-in-out;
 }
 .mange_admin button:hover {
