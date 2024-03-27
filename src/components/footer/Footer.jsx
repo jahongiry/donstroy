@@ -32,7 +32,7 @@ export const Footer = () => {
 							<ul>
 								{translations.footer.title2.lists.map((link, inx) => (
 									<li key={inx}>
-										<a href=''>{link}</a>
+										<Link to='/sertificates'>{link}</Link>
 									</li>
 								))}
 							</ul>
@@ -42,7 +42,9 @@ export const Footer = () => {
 							<ul>
 								{translations.footer.title3.lists.map((link, inx) => (
 									<li key={inx}>
-										<a href=''>{link}</a>
+										<Link to='https://t.me/don_stroy_project' target='_blank'>
+											{link}
+										</Link>
 									</li>
 								))}
 								<li className={styles.telegram}>

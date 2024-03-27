@@ -78,7 +78,7 @@ const Sidebar = ({ setShowSidebar, setLanguage, language }) => {
 						navigate('/sertificates'), setShowSidebar(false)
 					}}
 				>
-					{translations.sidebar.button}
+					{translations.header.button1}
 				</button>
 			</motion.div>
 			<div className={styles.dark} onClick={() => setShowSidebar(false)}></div>

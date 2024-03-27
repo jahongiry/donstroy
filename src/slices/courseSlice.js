@@ -1,6 +1,6 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
-import MAIN_URL from '../urls/MainUrl';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import axios from 'axios'
+import MAIN_URL from '../urls/MainUrl'
 
 export const fetchCourses = createAsyncThunk(
   'courses/fetchCourses',

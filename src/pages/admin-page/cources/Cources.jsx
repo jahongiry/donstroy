@@ -1,23 +1,23 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchCourses } from '../../../slices/courseSlice';
-import CourcesTable from '../../../components/cources-table/CourcesTable';
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import CourcesTable from '../../../components/cources-table/CourcesTable'
+import { fetchCourses } from '../../../slices/courseSlice'
 
 export const Cources = () => {
-  const dispatch = useDispatch();
-  const courses = useSelector((state) => state.courses.courses);
+	const dispatch = useDispatch()
+	const courses = useSelector(state => state.courses.courses)
 
-  useEffect(() => {
-    dispatch(fetchCourses());
-  }, [dispatch]);
+	useEffect(() => {
+		dispatch(fetchCourses())
+	}, [dispatch])
 
-  if (!courses || courses.length === 0) {
-    return <div>Loading...</div>;
-  }
+	if (!courses || courses.length === 0) {
+		return <div>Loading...</div>
+	}
 
-  return (
-    <>
-      <CourcesTable />
-    </>
-  );
-};
+	return (
+		<>
+			<CourcesTable />
+		</>
+	)
+}
