@@ -109,6 +109,10 @@
 		flex-direction: column;
 		gap: 10px;
 	}
+	.course_name {
+		flex-direction: column;
+		gap: 10px;
+	}
 	.zoom_img img {
 		width: 350px;
 	}

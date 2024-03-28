@@ -72,25 +72,27 @@ const StudentPage = () => {
 	}
 
 	return (
-		<div className={styles.student}>
-			{student && (
-				<div className={styles.student_info}>
-					<p>{student?.name}</p>
-					<img
-						src={`https://donstroy-api-production.up.railway.app${student?.certificate_url}`}
-						alt='certificate'
-						onLoad={() => setImageLoading(false)}
-					/>
+		<div className='container'>
+			<div className={styles.student}>
+				<div className={styles.btns}>
+					<button className={styles.download} onClick={handleDownloadClick}>
+						Yuklash
+						<MdSimCardDownload />
+					</button>
+					<button className={styles.share} onClick={handleShareClick}>
+						Ulashish <MdShare />
+					</button>
 				</div>
-			)}
-			<div className={styles.btns}>
-				<button className={styles.download} onClick={handleDownloadClick}>
-					Download
-					<MdSimCardDownload />
-				</button>
-				<button className={styles.share} onClick={handleShareClick}>
-					Share <MdShare />
-				</button>
+				{student && (
+					<div className={styles.student_info}>
+						<p>{student?.name}</p>
+						<img
+							src={`https://donstroy-api-production.up.railway.app${student?.certificate_url}`}
+							alt='certificate'
+							onLoad={() => setImageLoading(false)}
+						/>
+					</div>
+				)}
 			</div>
 		</div>
 	)

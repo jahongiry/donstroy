@@ -3,27 +3,33 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchCourses, updateCourse } from '../../slices/courseSlice'
 import EmailEditor from '../email-editor/EmailEditor'
+import Error from '../error/Error'
+import Loading from '../loading/Loading'
 import styles from './CourceEdit.module.css'
 
 export const CourceEdit = ({ id, setShowEditModal }) => {
 	const dispatch = useDispatch()
-	const courses = useSelector(state => state.courses.courses)
 	const [cource, setCource] = useState(null)
 	const [courcetName, setCourceName] = useState('')
 	const [teacher, setTeacher] = useState('')
 	const [description, setDescription] = useState('')
+	const loading = useSelector(state => state.student.loading)
+	const error = useSelector(state => state.student.error)
 
 	useEffect(() => {
 		dispatch(fetchCourses())
 	}, [dispatch])
+	const courses = useSelector(state => state.courses.courses)
 
 	useEffect(() => {
 		if (courses) {
 			const selectedCource = courses.find(c => c.id === id)
-			setCource(selectedCource)
-			setCourceName(selectedCource.name)
-			setTeacher(selectedCource.teacher)
-			setDescription(selectedCource.description)
+			if (selectedCource) {
+				setCource(selectedCource)
+				setCourceName(selectedCource.name)
+				setTeacher(selectedCource.teacher)
+				setDescription(selectedCource.description)
+			}
 		}
 	}, [id, courses])
 
@@ -47,14 +53,17 @@ export const CourceEdit = ({ id, setShowEditModal }) => {
 		}
 	}
 
-	if (!cource) {
-		return <div>Loading...</div>
+	if (loading) {
+		return <Loading />
 	}
 
+	if (error) {
+		return <Error error={error} />
+	}
 	return (
 		<div className={styles.cource_edit}>
 			<div className={styles.edit}>
-				<p>ID: {cource.id}</p>
+				{cource && <p>ID: {cource.id}</p>}
 				<label>
 					Course name
 					<input
@@ -64,7 +73,7 @@ export const CourceEdit = ({ id, setShowEditModal }) => {
 					/>
 				</label>
 				<label>
-					Techaer
+					Teacher
 					<input
 						type='text'
 						value={teacher}

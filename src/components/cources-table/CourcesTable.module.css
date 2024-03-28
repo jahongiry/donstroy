@@ -52,7 +52,7 @@
 	padding: 10px;
 }
 .table :where(th:nth-child(5), td:nth-child(5)) {
-	width: 145px;
+	width: 200px;
 }
 .table tr:nth-child(even) {
 	/* background-color: var(--color-light-blue); */

@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
+import Error from '../../components/error/Error'
+import Loading from '../../components/loading/Loading'
 import { selectTranslations } from '../../slices/LanguageSlice'
 import { SUB_URL } from '../../urls/MainUrl'
 import styles from './CourcePage.module.css'
@@ -10,9 +12,10 @@ export const Cource = () => {
 	const translations = useSelector(selectTranslations)
 	const { id } = useParams()
 	const params = useParams()
-	console.log(params)
 	const navigate = useNavigate()
 	const courses = useSelector(state => state.courses.courses)
+	const loading = useSelector(state => state.student.loading)
+	const error = useSelector(state => state.student.error)
 	const [viewImg, setViewImg] = useState(false)
 	const [imgId, setImgId] = useState(0)
 
@@ -21,7 +24,11 @@ export const Cource = () => {
 	}, [params])
 
 	if (!courses || courses.length === 0) {
-		return <div>Loading...</div>
+		return (
+			<div>
+				<Loading />
+			</div>
+		)
 	}
 
 	const course = courses.find(course => course.id === parseInt(id))
@@ -35,6 +42,15 @@ export const Cource = () => {
 		setViewImg(true)
 	}
 	const selectedImg = course.images[imgId]
+
+	if (loading) {
+		return <Loading />
+	}
+
+	if (error) {
+		return <Error error={error} />
+	}
+
 	return (
 		<div className='container'>
 			<div className={styles.cource}>

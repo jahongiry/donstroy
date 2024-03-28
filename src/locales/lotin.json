@@ -78,10 +78,10 @@
 	},
 	"adminPanel": {
 		"buttons": [
-			{ "button": "Studentlar", "link": "/admin/students" },
-			{ "button": "Student qoshish", "link": "/admin/add-student" },
-			{ "button": "Kurs qoshish", "link": "/admin/add-course" },
-			{ "button": "Kurslar", "link": "/admin/courses" }
+			{ "button": "TINGLOVCHILAR", "link": "/admin/students" },
+			{ "button": "TINGLOVCHILAR QO'SHISH", "link": "/admin/add-student" },
+			{ "button": "TA'LIM YO'NALISH QO'SHISH", "link": "/admin/add-course" },
+			{ "button": "TA'LIM YO'NALISHLARI", "link": "/admin/courses" }
 		]
 	}
 }

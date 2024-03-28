@@ -5,6 +5,8 @@ import { MdDriveFileRenameOutline, MdOutlineDescription } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteCourse } from '../../slices/courseSlice'
 import { CourceEdit } from '../cource-edit/CourceEdit'
+import Error from '../error/Error'
+import Loading from '../loading/Loading'
 import styles from './CourcesTable.module.css'
 
 const CourcesTable = () => {
@@ -12,6 +14,8 @@ const CourcesTable = () => {
 	const [id, setId] = useState(0)
 	const courses = useSelector(state => state.courses.courses)
 	const dispatch = useDispatch()
+	const loading = useSelector(state => state.student.loading)
+	const error = useSelector(state => state.student.error)
 
 	const handleEdit = courseId => {
 		setId(courseId)
@@ -22,6 +26,14 @@ const CourcesTable = () => {
 		dispatch(deleteCourse(courseId))
 	}
 
+	if (loading) {
+		return <Loading />
+	}
+
+	if (error) {
+		return <Error error={error} />
+	}
+
 	return (
 		<div className={styles.table_container}>
 			<table className={styles.table}>
@@ -29,19 +41,19 @@ const CourcesTable = () => {
 					<tr>
 						<th>ID</th>
 						<th>
-							Course name
+							Yonalish nomi
 							<MdDriveFileRenameOutline />
 						</th>
 						<th>
-							Teacher
+							Ustozlar
 							<FaChalkboardTeacher />
 						</th>
 						<th>
-							Description
+							Izoh
 							<MdOutlineDescription />
 						</th>
 						<th>
-							Action
+							Ammallar
 							<IoSettingsOutline />
 						</th>
 					</tr>
@@ -70,13 +82,13 @@ const CourcesTable = () => {
 									className={styles.action_btn}
 									onClick={() => handleEdit(course.id)}
 								>
-									Edit
+									O'zgartirish
 								</button>
 								<button
 									className={styles.action_btn}
 									onClick={() => handleDelete(course.id)}
 								>
-									Delete
+									O'chirish
 								</button>
 							</td>
 						</tr>

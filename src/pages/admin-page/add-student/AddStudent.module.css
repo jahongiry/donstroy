@@ -15,9 +15,7 @@
 	/* color: var(--color-dark-blue); */
 	color: #716e6e;
 	border-radius: 4px;
-}
-.add_student :where(input:nth-child(1), input:nth-child(2)) {
-	padding: 0 0 0 20px;
+	padding: 0 0 0 15px;
 }
 .add_student input:focus {
 	border: 2px solid #333;

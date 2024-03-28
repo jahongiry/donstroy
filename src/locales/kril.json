@@ -1,7 +1,7 @@
 {
 	"header": {
 		"button1": "Сертификатлар",
-		"cources": "Қасбий йўналишлари.",
+		"cources": "Касбий йўналишлари.",
 		"button2": "Кириш",
 		"drop_cources": [
 			"Таълим йўналишлари, курслар ва касблар рўйхати",
@@ -79,21 +79,25 @@
 	"adminPanel": {
 		"buttons": [
 			{
-				"button": "Студентлар",
+				"button": "TINGLOVCHILAR",
 				"link": "/admin/students",
 				"yCordinate": "28px"
 			},
 			{
-				"button": "Студент қўшиш",
+				"button": "TINGLOVCHILAR QO'SHISH",
 				"link": "/admin/add-student",
 				"yCordinate": "84px"
 			},
 			{
-				"button": "Курс қўшиш",
+				"button": "TA'LIM YO'NALISH QO'SHISH",
 				"link": "/admin/add-course",
 				"yCordinate": "146px"
 			},
-			{ "button": "Курслар", "link": "/admin/courses", "yCordinate": "205px" }
+			{
+				"button": "TA'LIM YO'NALISHLARI",
+				"link": "/admin/courses",
+				"yCordinate": "205px"
+			}
 		]
 	}
 }

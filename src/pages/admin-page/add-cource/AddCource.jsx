@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { CiCamera } from 'react-icons/ci'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import EmailEditor from '../../../components/email-editor/EmailEditor'
+import Error from '../../../components/error/Error'
+import Loading from '../../../components/loading/Loading'
 import { addCourse } from '../../../slices/courseSlice'
 import styles from './AddCource.module.css'
 
@@ -12,6 +14,8 @@ export const AddCource = () => {
 	const [description, setDescription] = useState('')
 	const [selectedFiles, setSelectedFiles] = useState([])
 	const [imagePreviews, setImagePreviews] = useState([])
+	const loading = useSelector(state => state.student.loading)
+	const error = useSelector(state => state.student.error)
 
 	const handleCreate = () => {
 		const formData = new FormData()
@@ -47,7 +51,13 @@ export const AddCource = () => {
 			reader.readAsDataURL(file)
 		})
 	}
+	if (loading) {
+		return <Loading />
+	}
 
+	if (error) {
+		return <Error error={error} />
+	}
 	return (
 		<div className={styles.add_cource}>
 			<input

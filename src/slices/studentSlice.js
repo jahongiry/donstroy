@@ -21,7 +21,7 @@ export const fetchStudentDetails = createAsyncThunk(
 )
 
 export const addStudent = createAsyncThunk(
-	'courses/addCourse',
+	'student/addStudent',
 	async (studentData, { rejectWithValue }) => {
 		try {
 			console.log('studentData', studentData)
@@ -46,7 +46,7 @@ export const addStudent = createAsyncThunk(
 )
 
 export const deleteStudent = createAsyncThunk(
-	'courses/deleteCourse',
+	'student/deleteStudent',
 	async (id, { rejectWithValue }) => {
 		try {
 			const token = localStorage.getItem('token')
@@ -70,7 +70,7 @@ export const deleteStudent = createAsyncThunk(
 )
 
 const initialState = {
-	student: null,
+	student: [],
 	loading: false,
 	error: null,
 }
@@ -104,6 +104,32 @@ const studentSlice = createSlice({
 			.addCase(fetchStudents.rejected, (state, action) => {
 				state.loading = false
 				state.error = action.error.message
+			})
+			.addCase(deleteStudent.pending, state => {
+				state.loading = true
+				state.error = null
+			})
+			.addCase(deleteStudent.fulfilled, (state, action) => {
+				state.loading = false
+				state.student = state.student.filter(
+					student => student.id !== action.payload
+				)
+			})
+			.addCase(deleteStudent.rejected, (state, action) => {
+				state.loading = false
+				state.error = action.error.message
+			})
+			.addCase(addStudent.pending, state => {
+				state.loading = true
+				state.error = null
+			})
+			.addCase(addStudent.fulfilled, (state, action) => {
+				state.loading = false
+				state.student.push(action.payload) // Now state.student is an array, so push works
+			})
+			.addCase(addStudent.rejected, (state, action) => {
+				state.loading = false
+				state.error = action.payload
 			})
 	},
 })
