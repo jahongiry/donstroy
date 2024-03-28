@@ -23,7 +23,6 @@ export const MainPage = () => {
 		try {
 			const response = await axios.get(URL)
 			setIsPending(true)
-			console.log(response.data)
 			toast.success(<p>Success</p>, { autoClose: 3000 })
 		} catch (error) {
 			toast.error(

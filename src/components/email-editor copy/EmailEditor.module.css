@@ -50,7 +50,7 @@
 	transform: scale(0.9);
 }
 .card {
-	/* padding-top: 30px; */
+	padding-top: 30px;
 	position: relative;
 	/* background-color: var(--color-light-blue); */
 	background-color: #eee;
@@ -63,7 +63,7 @@
 
 .card .editor {
 	padding: 1rem;
-	/* padding-bottom: 2rem; */
+	padding-bottom: 2rem;
 	display: block;
 	width: calc(100% - 2.4rem);
 	min-height: 160px;

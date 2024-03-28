@@ -2,7 +2,6 @@ import React from 'react'
 import './DatePicker.css'
 
 const DatePicker = ({ selectedDate, setSelectedDate }) => {
-	console.log(selectedDate)
 	const handleDateChange = event => {
 		setSelectedDate(event.target.value)
 	}
@@ -13,6 +12,7 @@ const DatePicker = ({ selectedDate, setSelectedDate }) => {
 				type='date'
 				value={selectedDate}
 				onChange={handleDateChange}
+				required
 				className='date-picker-input'
 			/>
 		</div>

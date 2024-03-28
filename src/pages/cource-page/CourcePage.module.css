@@ -66,6 +66,29 @@
 	z-index: 101;
 	border-radius: 8px;
 }
+.dark {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100dvh;
+	background-color: rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	transition: 0.5s;
+	z-index: 59;
+	transition: 0.3s;
+}
+.zoom_img img {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 700px !important;
+	height: 500px;
+	z-index: 60;
+	border-radius: 8px;
+	object-fit: contain;
+}
 @media (max-width: 550px) {
 	.cource h3 {
 		font-size: 18px;
@@ -90,7 +113,17 @@
 	.teachers p {
 		font-size: 14px;
 	}
+	.zoom_img img {
+		width: 430px !important;
+		padding: 0 50px;
+	}
 }
+@media (max-width: 350px) {
+	.zoom_img img {
+		padding: 0 70px;
+	}
+}
+
 @media (max-width: 397px) {
 	.cource {
 		gap: 10px;
