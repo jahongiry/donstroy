@@ -1,8 +1,9 @@
 import axios from 'axios'
 import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PhoneInput from 'react-phone-number-input'
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { selectTranslations } from '../../slices/LanguageSlice'
 import styles from './MainPage.module.css'
@@ -32,6 +33,10 @@ export const MainPage = () => {
 			console.error('Error fetching data:', error)
 		}
 	}
+	const params = useParams()
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [params])
 	const handleSendInfo = () => {
 		fetchData()
 		setShowCall(false)

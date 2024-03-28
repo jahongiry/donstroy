@@ -1,10 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BiSearch } from 'react-icons/bi'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import Error from '../../components/error/Error'
 import Loading from '../../components/loading/Loading'
 import { ZoomImage } from '../../components/zoom-image/ZoomImage'
 import { selectTranslations } from '../../slices/LanguageSlice'
+import { fetchStudents } from '../../slices/studentSlice'
+import { SUB_URL } from '../../urls/MainUrl'
 import styles from './Sertificates.module.css'
 const Sertificates = () => {
 	const [showZoomImage, setShowZoomImage] = useState(false)
@@ -12,13 +15,31 @@ const Sertificates = () => {
 	const translations = useSelector(selectTranslations)
 	const [searchValue, setSearchValue] = useState('')
 	const data = useSelector(state => state.student.student)
-	const loading = useSelector(state => state.student.loading)
-	const error = useSelector(state => state.student.error)
+	const dispatch = useDispatch()
+	// const students = useSelector(state => state.student.student)
 	const filteredData = data?.filter(
 		el =>
-			el.studentName.toLowerCase().includes(searchValue.toLowerCase().trim()) ||
-			el.id.toString().includes(searchValue.trim())
+			el?.name.toLowerCase().includes(searchValue.toLowerCase().trim()) ||
+			el?.id.toString().includes(searchValue.trim())
 	)
+
+	useEffect(() => {
+		dispatch(fetchStudents())
+	}, [dispatch])
+	// const filteredData = useSelector(state => state.student.student)
+	// const students = useSelector(state => state.student.student)
+	const loading = useSelector(state => state.student.loading)
+	const error = useSelector(state => state.student.error)
+	const params = useParams()
+	console.log(filteredData)
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [params])
+	// const filteredData = data?.filter(
+	// 	el =>
+	// 		el.studentName.toLowerCase().includes(searchValue.toLowerCase().trim()) ||
+	// 		el.id.toString().includes(searchValue.trim())
+	// )
 	const handleView = id => {
 		setId(id)
 		setShowZoomImage(true)
@@ -47,11 +68,12 @@ const Sertificates = () => {
 			<div className={styles.sertificates}>
 				{filteredData?.map(student => (
 					<div key={student?.id} className={styles.student}>
+						{console.log(student)}
 						<p>
-							ID: {student?.id}. {student?.studentName}
+							<span>ID: {student?.id}.</span> <span>{student?.name}</span>
 						</p>
 						<img
-							src={student?.certificate}
+							src={`${SUB_URL}${student?.certificate_url}`}
 							onClick={() => handleView(student?.id)}
 							alt='sertificate img'
 						/>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { selectTranslations } from '../../slices/LanguageSlice'
@@ -9,10 +9,16 @@ import styles from './CourcePage.module.css'
 export const Cource = () => {
 	const translations = useSelector(selectTranslations)
 	const { id } = useParams()
+	const params = useParams()
+	console.log(params)
 	const navigate = useNavigate()
 	const courses = useSelector(state => state.courses.courses)
 	const [viewImg, setViewImg] = useState(false)
 	const [imgId, setImgId] = useState(0)
+
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [params])
 
 	if (!courses || courses.length === 0) {
 		return <div>Loading...</div>
@@ -32,10 +38,13 @@ export const Cource = () => {
 	return (
 		<div className='container'>
 			<div className={styles.cource}>
-				<h3>{course.name}</h3>
+				<div className={styles.course_name}>
+					<h3>Kurs nomi:</h3>
+					<h4>{course?.name}</h4>
+				</div>
 				<div className={styles.teachers}>
-					<h3>{translations.cource.title3}:</h3>
-					<p>{course.teacher}</p>
+					<h3>Ustozlar:</h3>
+					<p>{course?.teacher}</p>
 				</div>
 				<div className={styles.images}>
 					{course.images.map((img, index) => (

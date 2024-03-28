@@ -40,11 +40,11 @@
 	width: 370px;
 	white-space: nowrap;
 }
-.table td:nth-child(3) {
+.table td:nth-child(4) {
 	width: 200px;
 	white-space: nowrap;
 }
-.table td:nth-child(4) {
+.table td:nth-child(3) {
 	padding: 12px 0 12px 12px;
 }
 .table td:nth-child(5) {

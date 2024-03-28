@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { FaChalkboardTeacher } from 'react-icons/fa'
 import { IoSettingsOutline } from 'react-icons/io5'
 import { MdDriveFileRenameOutline, MdOutlineDescription } from 'react-icons/md'
-import { useDispatch, useSelector } from 'react-redux'; // Importing useDispatch
-import { deleteCourse } from '../../slices/courseSlice'; // Importing the deleteCourse action
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteCourse } from '../../slices/courseSlice'
 import { CourceEdit } from '../cource-edit/CourceEdit'
 import styles from './CourcesTable.module.css'
 
@@ -33,12 +33,12 @@ const CourcesTable = () => {
 							<MdDriveFileRenameOutline />
 						</th>
 						<th>
-							Description
-							<MdOutlineDescription />
-						</th>
-						<th>
 							Teacher
 							<FaChalkboardTeacher />
+						</th>
+						<th>
+							Description
+							<MdOutlineDescription />
 						</th>
 						<th>
 							Action
@@ -56,11 +56,15 @@ const CourcesTable = () => {
 									: course.name}
 							</td>
 							<td>
+								{course.teacher
+									? course.teacher.split(' ')[0].slice(0, 12)
+									: ''}
+							</td>
+							<td>
 								{course.description.length > 22
 									? course.description.slice(0, 22) + '...'
 									: course.description}
 							</td>
-							<td>{`${course?.teacher.split(' ')[0].slice(0, 12)}`}</td>
 							<td>
 								<button
 									className={styles.action_btn}
@@ -68,7 +72,6 @@ const CourcesTable = () => {
 								>
 									Edit
 								</button>
-								{/* Calling handleDelete function on click and passing course.id */}
 								<button
 									className={styles.action_btn}
 									onClick={() => handleDelete(course.id)}
