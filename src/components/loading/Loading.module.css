@@ -1,0 +1,20 @@
+.layout_loatder {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.loader {
+	width: 100px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	border: 8px solid var(--color-gray);
+	border-right-color: var(--color-light-blue);
+	animation: l2 1s infinite linear;
+}
+@keyframes l2 {
+	to {
+		transform: rotate(1turn);
+	}
+}

@@ -3,7 +3,10 @@ import { MdShare, MdSimCardDownload } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import Error from '../../components/error/Error'
+import Loading from '../../components/loading/Loading'
 import { fetchStudentDetails } from '../../slices/studentSlice'
+import { SUB_URL } from '../../urls/MainUrl'
 import styles from './StudentPage.module.css'
 
 const StudentPage = () => {
@@ -44,8 +47,8 @@ const StudentPage = () => {
 			if (navigator.share) {
 				await navigator.share({
 					title: 'Certificate Link',
-					text: `Sertifikat: https://donstroy-api-production.up.railway.app${student?.certificate_url} 
-					url: https://donstroy-api-production.up.railway.app${student?.certificate_url}`,
+					text: `Sertifikat: ${SUB_URL}${student?.certificate_url} 
+					url: ${SUB_URL}${student?.certificate_url}`,
 				})
 			} else {
 				console.log('Web Share API not supported')
@@ -61,19 +64,11 @@ const StudentPage = () => {
 		}
 	}
 	if (loading) {
-		return (
-			<div className='layout_loatder'>
-				<div className='loader'></div>
-			</div>
-		)
+		return <Loading />
 	}
 
 	if (error) {
-		return (
-			<div className='error'>
-				<p>Error: {error}</p>
-			</div>
-		)
+		return <Error error={error} />
 	}
 
 	return (

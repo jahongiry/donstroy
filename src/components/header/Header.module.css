@@ -118,7 +118,7 @@
 }
 .drop_btns {
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -129,12 +129,17 @@
 }
 .drop_btns button {
 	width: 40%;
+	height: auto;
 	border: 2px solid var(--color-light-blue);
 	padding: 10px 15px;
 	border-radius: 6px;
 	background-color: transparent;
 	color: var(--color-gray);
 }
+/* .drop_btns button p {
+	width: 100px;
+
+} */
 .show_drop {
 	top: 0;
 }
@@ -178,6 +183,10 @@
 	.right {
 		gap: 25px;
 	}
+	.center p {
+		width: 200px;
+		text-align: center;
+	}
 }
 @media (max-width: 1015px) {
 	.menu {
@@ -185,6 +194,19 @@
 	}
 	.left button {
 		display: none;
+	}
+}
+@media (max-width: 800px) {
+	.center p {
+		font-size: 18px;
+	}
+}
+@media (max-width: 750px) {
+	.center p {
+		font-size: 15px;
+	}
+	.left p {
+		font-size: 15px;
 	}
 }
 @media (max-width: 770px) {
@@ -233,16 +255,50 @@
 		font-size: 20px;
 	}
 }
-@media (max-width: 440px) {
+@media (max-width: 490px) {
+	/* .navbar {
+		justify-content: center;
+	} */
 	.center p {
-		font-size: 14px;
+		font-size: 13px;
+		width: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
-}
-@media (max-width: 430px) {
-	.center p {
+	.right {
+		font-size: 10px;
+		padding: 0;
+		gap: 10px;
+		padding: 0;
+	}
+	.right button svg {
 		font-size: 12px;
 	}
 }
+@media (max-width: 450px) {
+	.right button {
+		font-size: 10px !important;
+	}
+}
+@media (max-width: 418px) {
+	.center p {
+		font-size: 10px;
+	}
+	.right button {
+		font-size: 8px !important;
+	}
+}
+/* @media (max-width: 440px) {
+	.center p {
+		font-size: 14px;
+	}
+} */
+/* @media (max-width: 430px) {
+	.center p {
+		font-size: 12px;
+	}
+} */
 
 @media (max-width: 350px) {
 	.left p {

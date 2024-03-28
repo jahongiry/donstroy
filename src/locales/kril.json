@@ -1,7 +1,7 @@
 {
 	"header": {
 		"button1": "Сертификатлар",
-		"cources": "КУРСЛАР",
+		"cources": "Қасбий йўналишлари.",
 		"button2": "Кириш",
 		"drop_cources": [
 			"Таълим йўналишлари, курслар ва касблар рўйхати",
@@ -57,7 +57,7 @@
 		},
 		"title2": {
 			"title": "МЕНИНГ ПРОФИЛИМ",
-			"lists": ["Аккаунт", "Созламалар", "Эълонлар"]
+			"lists": ["Аккаунт", "Сертификатлар"]
 		},
 		"title3": {
 			"title": "АЛОҚА",
@@ -90,10 +90,10 @@
 			},
 			{
 				"button": "Курс қўшиш",
-				"link": "/admin/add-cource",
+				"link": "/admin/add-course",
 				"yCordinate": "146px"
 			},
-			{ "button": "Курслар", "link": "/admin/cources", "yCordinate": "205px" }
+			{ "button": "Курслар", "link": "/admin/courses", "yCordinate": "205px" }
 		]
 	}
 }

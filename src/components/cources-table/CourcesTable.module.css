@@ -3,6 +3,9 @@
 	height: 100vh;
 	display: block;
 	overflow: scroll;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
 }
 .table {
 	width: 930px;

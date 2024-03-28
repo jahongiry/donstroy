@@ -46,16 +46,16 @@
 .table td:nth-child(5) {
 	width: 108px;
 }
-.table td:nth-child(6) {
+.table td:nth-child(5) {
 	width: 80px;
 	cursor: pointer;
 }
-.table td:nth-child(6) img {
-	width: 40px;
+.table td:nth-child(5) img {
+	width: 45px;
 	margin-left: 20px;
 	box-shadow: 4px 4px 5px gray;
 }
-.table td:nth-child(7) {
+.table td:nth-child(6) {
 	width: 145px;
 }
 .table tr:nth-child(even) {

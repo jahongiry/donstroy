@@ -1,7 +1,7 @@
 {
 	"header": {
 		"button1": "Сертификаты",
-		"cources": "КУРСЫ",
+		"cources": "Профессиональные направления",
 		"button2": "Войти",
 		"drop_cources": [
 			"Список обучающих курсов, направлений и специальностей",
@@ -67,7 +67,7 @@
 		},
 		"title2": {
 			"title": "МОЙ ПРОФИЛЬ",
-			"lists": ["Аккаунт", "Настройки", "Объявления"]
+			"lists": ["Аккаунт", "Сертификаты"]
 		},
 		"title3": {
 			"title": "КОНТАКТЫ",
@@ -91,11 +91,10 @@
 			},
 			{
 				"button": "Добавить курс",
-				"link": "/admin/add-cource",
+				"link": "/admin/add-course",
 				"yCordinate": "146px"
 			},
-			{ "button": "Курсы", "link": "/admin/cources", "yCordinate": "205px" }
+			{ "button": "Курсы", "link": "/admin/courses", "yCordinate": "205px" }
 		]
 	}
-
 }

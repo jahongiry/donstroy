@@ -27,15 +27,19 @@
 	gap: 10px;
 }
 .edit p {
-	color: var(--color-dark-blue);
+	/* color: var(--color-dark-blue); */
+	color: #333;
 }
 .edit input {
 	width: 700px;
 	padding: 10px 0;
 	outline: none;
-	border: 2px solid var(--color-light-blue);
+	/* border: 2px solid var(--color-light-blue); */
+	border: 2px solid #333;
 	text-indent: 10px;
-	color: var(--color-dark-blue);
+	/* color: var(--color-dark-blue); */
+	color: #333;
+	border-radius: 8px;
 }
 .bottom_inputs {
 	width: 100%;
@@ -50,8 +54,10 @@
 	width: 200px;
 	padding: 10px 30px;
 	border-radius: 8px;
-	border: 2px solid var(--color-light-blue);
-	color: var(--color-dark-blue);
+	/* border: 2px solid var(--color-light-blue); */
+	border: 2px solid #333;
+	/* color: var(--color-dark-blue); */
+	color: #333;
 	font-size: 18px;
 	transition: 0.3s ease-in-out;
 }
@@ -59,6 +65,7 @@
 	transform: scale(0.9);
 }
 .edit_btn:hover {
-	color: var(--color-dark-blue);
-	background-color: var(--color-light-blue);
+	/* color: var(--color-dark-blue); */
+	color: #eee;
+	background-color: #888;
 }
