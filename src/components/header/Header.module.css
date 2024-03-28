@@ -125,7 +125,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	gap: 20px;
-	padding: 70px 0 0;
+	padding: 10rem 0 0;
 }
 .drop_btns button {
 	width: 40%;
