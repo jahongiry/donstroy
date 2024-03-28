@@ -53,13 +53,13 @@ export const AddCource = () => {
 			<input
 				type='text'
 				value={courceName}
-				placeholder='Course name'
+				placeholder='Kurs nomi'
 				onChange={e => setCourceName(e.target.value)}
 			/>
 			<input
 				type='text'
 				value={teacherName}
-				placeholder='Teacher name'
+				placeholder='Ustozning ismi'
 				onChange={e => setTeacherName(e.target.value)}
 			/>
 			<div className={styles.img_edit}>
@@ -82,7 +82,7 @@ export const AddCource = () => {
 			</div>
 			<EmailEditor text={description} setText={setDescription} />
 			<button onClick={handleCreate} className={styles.create_btn}>
-				Create
+				Yaratish
 			</button>
 		</div>
 	)

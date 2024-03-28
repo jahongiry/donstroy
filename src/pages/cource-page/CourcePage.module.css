@@ -13,8 +13,20 @@
 	padding: 20px 0;
 	text-align: center;
 }
-.cource p {
+.course_name {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	text-align: center;
+}
+.cource h4 {
+	font-size: 23px;
 	color: var(--color-light-blue);
+}
+.cource p {
+	color: var(--color-dark-blue);
 	line-height: 25px;
 }
 .cource h3:nth-child(1) {

@@ -62,9 +62,9 @@ const StudentsTable = ({ data }) => {
 								{/* {`${item.studentName.split(' ')[0].slice(0, 12)}${
 									item.studentName.split(' ')[0].length >= 12 ? '...' : ''
 								} ${item.studentName.split(' ')[1].slice(0, 1)}.`} */}
-								{student?.name}
+								{student?.name.slice(0, 26)}
 							</td>
-							<td>{student.courseName}</td>
+							<td>{student.course.name.slice(0, 25)}</td>
 							{/*
 							<td>{item.description}</td> 
 							*/}

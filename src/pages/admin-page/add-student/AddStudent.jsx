@@ -48,16 +48,16 @@ export const AddStudent = () => {
 				required
 				onChange={e => setStudentName(e.target.value)}
 			/>
-			<input
+			{/* <input
 				type='text'
 				value={courceName}
 				placeholder='Cource name'
 				required
 				onChange={e => setCourceName(e.target.value)}
-			/>
+			/> */}
 			<select value={courseId} onChange={e => setCourseId(e.target.value)}>
 				<option value='' disabled>
-					Select a course
+					Kursni tanlang
 				</option>
 				{courses.map(course => (
 					<option key={course.id} value={course.id}>

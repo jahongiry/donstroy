@@ -22,6 +22,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	/* font-family: 'Cera Pro Bold', 'FallbackFont', Arial, sans-serif; */
+	scroll-behavior: smooth;
 	font-family: sans-serif;
 }
 /* :root {

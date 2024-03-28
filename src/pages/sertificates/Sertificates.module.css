@@ -30,6 +30,10 @@
 }
 .student p {
 	color: var(--color-dark-blue);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 .student:hover {
 	transform: scale(1.1);
