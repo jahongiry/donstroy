@@ -107,6 +107,7 @@ export const Header = () => {
 						setShowSidebar={setShowSidebar}
 						language={language}
 						setLanguage={setLanguage}
+						setShowCourcesTable={setShowCourcesTable}
 					/>
 				)}
 			</div>

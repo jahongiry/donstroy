@@ -8,22 +8,18 @@ import {
 } from '../../slices/LanguageSlice'
 import styles from './Sidebar.module.css'
 
-const menuLinks = [
-	'Qurilish mollari',
-	'Armatura',
-	'Sement',
-	'Kraska',
-	"Biton G'ist",
-	'Forma',
-	'Statistika',
-]
-
-const Sidebar = ({ setShowSidebar, setLanguage, language }) => {
+const Sidebar = ({
+	setShowSidebar,
+	setLanguage,
+	language,
+	setShowCourcesTable,
+}) => {
 	const dispatch = useDispatch()
 	const currentLanguage = useSelector(selectCurrentLanguage)
 	const translations = useSelector(selectTranslations)
 	const navigate = useNavigate()
-
+	const courses = useSelector(state => state.courses.courses)
+	const links = courses.slice(0, 5)
 	const handleChangeLanguage = newLang => {
 		dispatch(switchLanguage(newLang))
 	}
@@ -66,9 +62,14 @@ const Sidebar = ({ setShowSidebar, setLanguage, language }) => {
 					</button>
 				</div>
 				<ul>
-					{translations.sidebar.lists.map((link, inx) => (
-						<li key={inx}>
-							<a href=''>{link}</a>
+					{links.map((link, inx) => (
+						<li
+							key={inx}
+							onClick={() => {
+								setShowSidebar(false), setShowCourcesTable(true)
+							}}
+						>
+							<a>{link.name.slice(0, 30)}</a>
 						</li>
 					))}
 				</ul>

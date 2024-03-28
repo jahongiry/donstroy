@@ -41,4 +41,24 @@
 		width: 20%;
 	}
 }
-/* h540w470 */
+@media (max-width: 450px) {
+	.sidebar ul a {
+		font-size: 14px;
+	}
+}
+@media (max-width: 380px) {
+	.sidebar ul a {
+		font-size: 12px;
+	}
+}
+@media (max-width: 350px) {
+	.sidebar ul a {
+		font-size: 10px;
+	}
+	.languages {
+		gap: 10px;
+	}
+	.languages button {
+		padding: 8px 10px;
+	}
+}
