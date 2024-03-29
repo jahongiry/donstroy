@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { CiCamera } from 'react-icons/ci'
 import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
 import EmailEditor from '../../../components/email-editor/EmailEditor'
 import Error from '../../../components/error/Error'
 import Loading from '../../../components/loading/Loading'
@@ -9,29 +11,34 @@ import styles from './AddCource.module.css'
 
 export const AddCource = () => {
 	const dispatch = useDispatch()
-	const [courceName, setCourceName] = useState('')
-	const [teacherName, setTeacherName] = useState('')
+	// const [courceName, setCourceName] = useState('')
+	// const [teacherName, setTeacherName] = useState('')
 	const [description, setDescription] = useState('')
 	const [selectedFiles, setSelectedFiles] = useState([])
 	const [imagePreviews, setImagePreviews] = useState([])
 	const loading = useSelector(state => state.student.loading)
 	const error = useSelector(state => state.student.error)
+	const {
+		register,
+		handleSubmit,
+		formState: { errors, isSubmitting },
+		reset,
+	} = useForm()
 
-	const handleCreate = () => {
+	const onSubmit = async data => {
 		const formData = new FormData()
-		formData.append('course[name]', courceName)
-		formData.append('course[teacher]', teacherName)
+		formData.append('course[name]', data.courseName)
+		formData.append('course[teacher]', data.teacherName)
 		formData.append('course[description]', description)
 		selectedFiles.forEach(file => {
 			formData.append('course[images][]', file)
 		})
 		dispatch(addCourse(formData))
-
-		setCourceName('')
-		setTeacherName('')
 		setDescription('')
 		setSelectedFiles([])
 		setImagePreviews([])
+		reset({ courseName: '', teacherName: '' })
+		toast.success(<p>Yonalish yaratildi</p>)
 	}
 
 	const handleFileChange = event => {
@@ -59,18 +66,22 @@ export const AddCource = () => {
 		return <Error error={error} />
 	}
 	return (
-		<div className={styles.add_cource}>
+		<form className={styles.add_cource} onSubmit={handleSubmit(onSubmit)}>
+			<p className='red-text-important'>{errors.courseName?.message}</p>
+			<p className='red-text-important'>{errors.teacherName?.message}</p>
 			<input
 				type='text'
-				value={courceName}
-				placeholder='Kurs nomi'
-				onChange={e => setCourceName(e.target.value)}
+				// value={courceName}
+				{...register('courseName', { required: 'Yonalishni kiritish shart' })}
+				placeholder='Yonalish nomi'
+				// onChange={e => setCourceName(e.target.value)}
 			/>
 			<input
 				type='text'
-				value={teacherName}
+				// value={teacherName}
 				placeholder='Ustozning ismi'
-				onChange={e => setTeacherName(e.target.value)}
+				{...register('teacherName', { required: 'Ustozni kiritish shart' })}
+				// onChange={e => setTeacherName(e.target.value)}
 			/>
 			<div className={styles.img_edit}>
 				<div className={styles.upload}>
@@ -91,9 +102,8 @@ export const AddCource = () => {
 				</div>
 			</div>
 			<EmailEditor text={description} setText={setDescription} />
-			<button onClick={handleCreate} className={styles.create_btn}>
-				Yaratish
-			</button>
-		</div>
+			{/* <button onClick={handleCreate} className={styles.create_btn}> */}
+			<button className={styles.create_btn}>Yaratish</button>
+		</form>
 	)
 }
