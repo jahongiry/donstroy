@@ -65,13 +65,13 @@ const StudentsTable = () => {
 							<td>{student?.id}</td>
 							<td>{student?.name ? student.name.slice(0, 25) : ''}</td>
 							<td>
-								{student?.course?.name ? student.course.name.slice(0, 15) : ''}
+								{student?.course?.name ? student.course.name.slice(0, 25) : ''}
 							</td>
 							<td>
-								{student?.created_at
-									? `${student.created_at.split('-')[2].slice(0, 2)}-${
-											student.created_at.split('-')[1]
-									  }-${student.created_at.split('-')[0]}`
+								{student?.certificate_date
+									? `${student.certificate_date.split('-')[2].slice(0, 2)}-${
+											student.certificate_date.split('-')[1]
+									  }-${student.certificate_date.split('-')[0]}`
 									: ''}
 							</td>
 							<td
