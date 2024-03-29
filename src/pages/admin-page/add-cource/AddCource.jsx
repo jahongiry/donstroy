@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { CiCamera } from 'react-icons/ci'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import EmailEditor from '../../../components/email-editor/EmailEditor'
 import Error from '../../../components/error/Error'
@@ -11,6 +12,7 @@ import styles from './AddCource.module.css'
 
 export const AddCource = () => {
 	const dispatch = useDispatch()
+	const navigate = useNavigate()
 	// const [courceName, setCourceName] = useState('')
 	// const [teacherName, setTeacherName] = useState('')
 	const [description, setDescription] = useState('')
@@ -34,11 +36,17 @@ export const AddCource = () => {
 			formData.append('course[images][]', file)
 		})
 		dispatch(addCourse(formData))
-		setDescription('')
-		setSelectedFiles([])
-		setImagePreviews([])
-		reset({ courseName: '', teacherName: '' })
-		toast.success(<p>Yonalish yaratildi</p>)
+			.then(() => {
+				setDescription('')
+				setSelectedFiles([])
+				setImagePreviews([])
+				reset({ courseName: '', teacherName: '' })
+				navigate('/admin/courses')
+				toast.success(<p>Yonalish yaratildi</p>)
+			})
+			.catch(() => {
+				console.error('Error creating course data:', error)
+			})
 	}
 
 	const handleFileChange = event => {

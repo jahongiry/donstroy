@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import Error from '../../../components/error/Error'
 import Loading from '../../../components/loading/Loading'
 import { addStudent } from '../../../slices/studentSlice'
@@ -12,6 +13,7 @@ export const AddStudent = () => {
 	const loading = useSelector(state => state.student.loading)
 	const error = useSelector(state => state.student.error)
 	const [sertificateDate, setSertificateDate] = useState('')
+	const navigate = useNavigate()
 	const {
 		register,
 		handleSubmit,
@@ -37,12 +39,40 @@ export const AddStudent = () => {
 			passport: data.passport,
 		}
 		dispatch(addStudent(studentData))
-		reset({
-			name: '',
-			course_id: '',
-			certificate_date: '',
-		})
+			.then(() => {
+				navigate('/admin/students')
+				reset({
+					name: '',
+					course_id: '',
+					certificate_date: '',
+					hour: '',
+					category: '',
+					control: '',
+					passport: '',
+				})
+			})
+			.catch(error => {
+				// Handle the error here, such as displaying a message to the user
+				console.error('Error submitting student data:', error)
+			})
 	}
+	// const onSubmit = data => {
+	// 	const studentData = {
+	// 		name: data.name,
+	// 		course_id: data.course_id,
+	// 		certificate_date: data.certificate_date,
+	// 		hour: data.hour,
+	// 		level: data.category,
+	// 		control: data.control,
+	// 		passport: data.passport,
+	// 	}
+	// 	dispatch(addStudent(studentData))
+	// 	reset({
+	// 		name: '',
+	// 		course_id: '',
+	// 		certificate_date: '',
+	// 	})
+	// }
 
 	if (loading) {
 		return <Loading />
