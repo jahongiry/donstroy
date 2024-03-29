@@ -111,7 +111,7 @@ export const AddStudent = () => {
 			<input
 				type='text'
 				placeholder='Toifasini kiriting'
-				{...register('category', { required: true })}
+				{...register('category')}
 			/>
 			{/* <p className='red_text'>{errors.control?.message}</p> */}
 			<input type='text' placeholder='Nazorat' {...register('control')} />
