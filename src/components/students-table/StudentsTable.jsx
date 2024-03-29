@@ -65,7 +65,7 @@ const StudentsTable = () => {
 							<td>{student?.id}</td>
 							<td>{student?.name ? student.name.slice(0, 25) : ''}</td>
 							<td>
-								{student?.course?.name ? student.course.name.slice(0, 25) : ''}
+								{student?.course?.name ? student.course.name.slice(0, 23) : ''}
 							</td>
 							<td>
 								{student?.certificate_date
