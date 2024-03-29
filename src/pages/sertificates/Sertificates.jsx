@@ -19,8 +19,10 @@ const Sertificates = () => {
 	// const students = useSelector(state => state.student.student)
 	const filteredData = data?.filter(
 		el =>
-			el?.name.toLowerCase().includes(searchValue.toLowerCase().trim()) ||
-			el?.id.toString().includes(searchValue.trim())
+			el.name.toLowerCase().includes(searchValue.toLowerCase().trim()) ||
+			el.id.toString().includes(searchValue.trim()) ||
+			(el.passport &&
+				el.passport.toLowerCase().includes(searchValue.toLowerCase().trim()))
 	)
 
 	useEffect(() => {
